@@ -1,0 +1,15 @@
+networks:
+  red_privada:
+    driver: bridge
+
+services:
+  apache_host:
+    build:
+      context: ./apache_host
+    container_name: apache_host
+    ports:
+      - "2222:22"   # SSH
+      - "8080:80"   # Apache
+    networks:
+      - red_privada
+
