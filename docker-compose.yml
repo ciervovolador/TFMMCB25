@@ -1,15 +1,86 @@
+services:
+  apache_server:
+    build: ./apache_server
+    container_name: apache_host
+    ports:
+      - "2222:22"
+      - "8080:80"
+    networks:
+      red_privada:
+        ipv4_address: 172.20.0.11
+
+  mysql_host:
+    build: ./mysql_server
+    container_name: mysql_server
+    ports:
+      - "3306:3306"
+      - "2223:22"
+    networks:
+      red_privada:
+        ipv4_address: 172.20.0.12
+
+  dns_host:
+    build: ./dns_server
+    container_name: dns_server
+    ports:
+      - "53:53/udp"
+      - "53:53"
+      - "2224:22"
+    networks:
+      red_privada:
+        ipv4_address: 172.20.0.10
+
+  mail_host:
+    build: ./mail_server
+    container_name: mail_server
+    ports:
+      - "25:25"
+      - "2225:22"
+    networks:
+      red_privada:
+        ipv4_address: 172.20.0.13
+
+  proxy_host:
+    build: ./proxy_server
+    container_name: proxy_server
+    ports:
+      - "3128:3128"
+      - "2226:22"
+    networks:
+      red_privada:
+        ipv4_address: 172.20.0.14
+
+  grafana_host:
+    build: ./grafana_server
+    container_name: grafana_server
+    ports:
+      - "3000:3000"
+    networks:
+      red_privada:
+        ipv4_address: 172.20.0.15
+
+  cliente_gui:
+    build: ./cliente_gui
+    container_name: cliente_gui
+    ports:
+      - "6080:80"
+    networks:
+      red_privada:
+        ipv4_address: 172.20.0.16
+
+  attacker:
+    build: ./attacker
+    container_name: attacker
+    stdin_open: true
+    tty: true
+    networks:
+      red_ataque
+
 networks:
   red_privada:
     driver: bridge
-
-services:
-  apache_host:
-    build:
-      context: ./apache_host
-    container_name: apache_host
-    ports:
-      - "2222:22"   # SSH
-      - "8080:80"   # Apache
-    networks:
-      - red_privada
-
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+  red_ataque:
+    driver: bridge
