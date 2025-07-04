@@ -1,13 +1,15 @@
 services:
   apache_server:
     build: ./apache_server
-    container_name: apache_host
+    container_name: apache_server
     ports:
       - "2222:22"
       - "8080:80"
     networks:
       red_privada:
         ipv4_address: 172.20.0.11
+    volumes:
+      - ./apache_server/web:/var/www/html
 
   mysql_host:
     build: ./mysql_server
@@ -23,8 +25,6 @@ services:
     build: ./dns_server
     container_name: dns_server
     ports:
-      - "53:53/udp"
-      - "53:53"
       - "2224:22"
     networks:
       red_privada:
@@ -59,14 +59,16 @@ services:
       red_privada:
         ipv4_address: 172.20.0.15
 
-  cliente_gui:
-    build: ./cliente_gui
-    container_name: cliente_gui
+  user:
+    build: ./user
+    container_name: user
     ports:
       - "6080:80"
     networks:
       red_privada:
         ipv4_address: 172.20.0.16
+    volumes:
+      - ./user/home:/root
 
   attacker:
     build: ./attacker
@@ -74,7 +76,7 @@ services:
     stdin_open: true
     tty: true
     networks:
-      red_ataque
+      - red_ataque
 
 networks:
   red_privada:
@@ -84,3 +86,6 @@ networks:
         - subnet: 172.20.0.0/24
   red_ataque:
     driver: bridge
+
+volumes:
+  user_home:

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Insegura Corp - Portal</title>
+  <style>
+    body { font-family: Arial; background-color: #eee; padding: 20px; }
+    .container { background: white; padding: 20px; border-radius: 10px; max-width: 600px; margin: auto; }
+    input, button { padding: 10px; margin: 5px 0; width: 100%; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bienvenido al Portal de Insegura Corp</h1>
+
+    <!-- TODO: Eliminar comentarios con rutas sensibles antes de producción -->
+    <!-- Ruta de administración: /admin_panel.html -->
+    <!-- Archivo de backup: backup.zip -->
+    <!-- Flag parcial: CTF{dont_trust_ -->
+
+    <p>Introduce tu nombre:</p>
+    <form action="?" method="GET">
+      <input type="text" name="name" placeholder="Tu nombre">
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div id="greeting"></div>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get("name");
+      if (name) {
+        // ⚠️ XSS Reflejado
+        document.getElementById("greeting").innerHTML = "Hola, " + name + " 👋";
+      }
+
+      // ⚠️ Flag escondida en código JS
+      const _flag = "trust_the_client}"; // CTF{dont_trust_the_client}
+    </script>
+
+    <hr>
+
+    <h3>Inicio de sesión</h3>
+    <form action="/login" method="POST">
+      <input type="text" name="usuario" placeholder="Usuario">
+      <input type="password" name="clave" placeholder="Contraseña">
+      <button type="submit">Iniciar sesión</button>
+    </form>
+
+    <!-- Pista: Las credenciales por defecto están en el README del repositorio 😉 -->
+
+  </div>
+</body>
+</html>
