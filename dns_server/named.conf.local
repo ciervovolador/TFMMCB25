@@ -1,4 +1,9 @@
-zone "lab.local" {
+zone "masterciberseguridad.com" {
     type master;
-    file "/etc/bind/db.lab.local";
+    file "/etc/bind/zones/db.masterciberseguridad.com";
 };
+zone "inseguracorp.com" {
+    type master;
+    file "/etc/bind/zones/db.inseguracorp.com";
+};
+

@@ -1,11 +1,19 @@
 FROM ubuntu:22.04
 
-RUN apt-get update && apt-get install -y bind9 openssh-server && \ 
-    mkdir /var/run/sshd && echo 'root:toor' | chpasswd &&     sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y bind9 dnsutils openssh-server && \
+    mkdir /var/run/sshd && \
+    echo 'root:toor' | chpasswd && \
+    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
+# Copiar configuraciones de BIND
 COPY named.conf.local /etc/bind/named.conf.local
-COPY db.lab.local /etc/bind/db.lab.local
+COPY named.conf.options /etc/bind/named.conf.options
+COPY zones /etc/bind/zones
 
-EXPOSE 22 53
+EXPOSE 22
+EXPOSE 53/tcp
+EXPOSE 53/udp
 
-CMD service bind9 start && /usr/sbin/sshd -D
+CMD bash -c "named -g -c /etc/bind/named.conf & /usr/sbin/sshd -D"
+

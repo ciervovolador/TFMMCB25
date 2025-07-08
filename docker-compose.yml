@@ -21,7 +21,7 @@ services:
       red_privada:
         ipv4_address: 172.20.0.12
 
-  dns_host:
+  dns_server:
     build: ./dns_server
     container_name: dns_server
     ports:
@@ -30,17 +30,37 @@ services:
       red_privada:
         ipv4_address: 172.20.0.10
 
-  mail_host:
+  mail_server:
     build: ./mail_server
     container_name: mail_server
+    hostname: mail_server
+    domainname: masterciberseguridad.com
     ports:
-      - "25:25"
-      - "2225:22"
+      - "25:25"       # SMTP
+      - "143:143"     # IMAP
+      - "587:587"     # Submission (SMTP with auth)
+    volumes:
+      - ./maildata/mail:/var/mail
+      - ./maildata/state:/var/mail-state
+      - ./maildata/log:/var/log/mail
+      - ./maildata/config:/tmp/docker-mailserver
+    environment:
+      - ENABLE_SPAMASSASSIN=1
+      - ENABLE_CLAMAV=0
+      - ENABLE_FAIL2BAN=0
+      - ENABLE_POSTGREY=0
+      - ONE_DIR=1
+      - DMS_DEBUG=0
+      - PERMIT_DOCKER=network
     networks:
       red_privada:
         ipv4_address: 172.20.0.13
+    cap_add:
+      - NET_ADMIN
+      - SYS_PTRACE
+    restart: always
 
-  proxy_host:
+  proxy_server:
     build: ./proxy_server
     container_name: proxy_server
     ports:
@@ -50,7 +70,7 @@ services:
       red_privada:
         ipv4_address: 172.20.0.14
 
-  grafana_host:
+  grafana_server:
     build: ./grafana_server
     container_name: grafana_server
     ports:
@@ -66,7 +86,9 @@ services:
       - "6080:80"
     networks:
       red_privada:
-        ipv4_address: 172.20.0.16
+        ipv4_address: 172.20.0.100
+    dns:
+      - 172.20.0.10
     volumes:
       - ./user/home:/root
 
@@ -75,9 +97,11 @@ services:
     container_name: attacker
     stdin_open: true
     tty: true
+    ports:
+      - "2227:22"
     networks:
-      - red_ataque
-
+      red_ataque:
+        ipv4_address: 10.20.30.10 
 networks:
   red_privada:
     driver: bridge
@@ -86,6 +110,8 @@ networks:
         - subnet: 172.20.0.0/24
   red_ataque:
     driver: bridge
-
+    ipam:
+      config:
+        - subnet: 10.20.30.0/24
 volumes:
   user_home:

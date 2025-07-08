@@ -1,3 +1,1 @@
-FROM grafana/grafana-oss
-
-EXPOSE 3000
+FROM mailserver/docker-mailserver:latest
