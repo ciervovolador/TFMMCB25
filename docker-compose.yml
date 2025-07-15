@@ -11,7 +11,7 @@ services:
     volumes:
       - ./apache_server/web:/var/www/html
 
-  mysql_host:
+  mysql_server:
     build: ./mysql_server
     container_name: mysql_server
     ports:
@@ -44,6 +44,8 @@ services:
       - ./maildata/state:/var/mail-state
       - ./maildata/log:/var/log/mail
       - ./maildata/config:/tmp/docker-mailserver
+      - ./sendmail.php:/var/www/html/sendmail.php
+      - ./msmtprc:/etc/msmtprc   # Configuración SMTP
     environment:
       - ENABLE_SPAMASSASSIN=1
       - ENABLE_CLAMAV=0
