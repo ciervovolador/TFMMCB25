@@ -20,7 +20,8 @@ services:
     networks:
       red_privada:
         ipv4_address: 172.20.0.12
-
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
   dns_server:
     build: ./dns_server
     container_name: dns_server

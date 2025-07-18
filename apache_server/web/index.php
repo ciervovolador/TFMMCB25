@@ -6,7 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $clave = $_POST["clave"] ?? '';
 
     // Conexión vulnerable (sin sanitización)
-    $conn = new mysqli("172.20.0.12", "root", "toor", "insegura");
+    $conn = new mysqli("mysql_server", "root", "toor", "insegura");
+
 
     if ($conn->connect_error) {
         $mensaje = "❌ Error de conexión a la base de datos.";
@@ -16,7 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $result = $conn->query($sql);
 
         if ($result && $result->num_rows > 0) {
-            $mensaje = "✅ Bienvenido, <strong>$usuario</strong>";
+            header("Location: panel.php?usuario=$usuario");
+		exit;
+
         } else {
             $mensaje = "❌ Usuario o contraseña incorrectos.";
         }
@@ -72,6 +75,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <input type="text" name="usuario" placeholder="Usuario">
       <input type="password" name="clave" placeholder="Contraseña">
       <button type="submit">Iniciar sesión</button>
+<p style="text-align:center; margin-top:15px;">
+  ¿No tienes cuenta? <a href="registro.php">Regístrate aquí</a>
+</p>
     </form>
 
     <?php if (!empty($mensaje)): ?>
