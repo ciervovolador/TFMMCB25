@@ -8,10 +8,12 @@ services:
     networks:
       red_privada:
         ipv4_address: 172.20.0.11
+    red_publica:
+        ipv4_address: 213.100.100.2
     volumes:
       - ./apache_server/web:/var/www/html
 
-  mysql_server:
+ mysql_server:
     build: ./mysql_server
     container_name: mysql_server
     ports:
@@ -95,6 +97,27 @@ services:
     volumes:
       - ./user/home:/root
 
+    router:
+    image: alpine
+    command: >
+      sh -c "
+      apk add iptables;
+      echo 1 > /proc/sys/net/ipv4/ip_forward;
+      # NAT para la red privada
+      iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE;
+      # Redirigir tráfico público al servidor web
+      iptables -t nat -A PREROUTING -i eth1 -p tcp --dport 80 -j DNAT --to 192.168.100.2:80;
+      tail -f /dev/null
+      "
+      networks:
+        red_privada:
+          ipv4_address: 172.20.0.1  # Gateway de la red privada
+        red_publica:
+          ipv4_address: 213.100.100.20
+        ports:
+          - "80:80"
+        cat_add:
+          - NET_ADMIN
   attacker:
     build: ./attacker
     container_name: attacker
@@ -105,16 +128,25 @@ services:
     networks:
       red_ataque:
         ipv4_address: 10.20.30.10 
+      red_publica:
+        ipv4_address: 213.100.100.30
+
 networks:
   red_privada:
     driver: bridge
     ipam:
       config:
         - subnet: 172.20.0.0/24
+          gateway: 172.20.0.1
   red_ataque:
     driver: bridge
     ipam:
       config:
         - subnet: 10.20.30.0/24
+  red_publica:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 213.100.100.0/24
 volumes:
   user_home:

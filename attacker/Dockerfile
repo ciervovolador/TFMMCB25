@@ -1,4 +1,4 @@
-FROM kalilinux/kali-rolling
+lsFROM kalilinux/kali-rolling
 
 # Instalar herramientas y SSH
 RUN apt-get update && \

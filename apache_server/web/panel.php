@@ -22,7 +22,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows === 0) {
-    die("<h2 style='color:red; text-align:center;'>❌ Acceso denegado: el usuario <strong>" . htmlspecialchars($usuario) . "</strong> no existe.</h2><p style='text-align:center;'><a href='index.php'>Volver al login</a></p>");
+    die("<h2 style='color:red; text-align:center;'>❌ Acceso denegado: el usuario <strong>" . $usuario . "</strong> no existe.</h2><p style='text-align:center;'><a href='index.php'>Volver al login</a></p>");
 }
 
 $userData = $result->fetch_assoc();
@@ -37,12 +37,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($form_tipo === 'perfil' && isset($_POST['nombre'])) {
         $nuevoNombre = trim($_POST['nombre']);
         if ($nuevoNombre !== '') {
-            // Actualizamos un campo aparte "nombre" para mostrar (no el usuario)
             $updateStmt = $conn->prepare("UPDATE usuarios SET nombre = ? WHERE usuario = ?");
             $updateStmt->bind_param("ss", $nuevoNombre, $usuario);
             if ($updateStmt->execute()) {
                 $perfilGuardado = true;
-                $userData['nombre'] = $nuevoNombre; // actualizar en memoria
+                $userData['nombre'] = $nuevoNombre;
             } else {
                 $mensaje = "Error al guardar perfil: " . $updateStmt->error;
             }
@@ -61,13 +60,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Obtener comentarios guardados
+// Obtener comentarios guardados (SIN ESCAPE)
 $comentarios = [];
 $comentariosResult = $conn->query("SELECT usuario, comentario, fecha FROM comentarios ORDER BY fecha DESC LIMIT 10");
 if ($comentariosResult) {
     while ($row = $comentariosResult->fetch_assoc()) {
-        // ⚠️ Aquí si quieres simular XSS persistente, puedes quitar htmlspecialchars en comentario
-        $comentarios[] = "<strong>" . htmlspecialchars($row['usuario']) . "</strong> (" . $row['fecha'] . "): " . nl2br(htmlspecialchars($row['comentario']));
+        $comentarios[] = "<strong>" . $row['usuario'] . "</strong> (" . $row['fecha'] . "): " . nl2br($row['comentario']);
     }
 }
 
@@ -150,7 +148,7 @@ $conn->close();
 <body>
 
 <div class="header">
-  <h1>Bienvenido al panel, <?php echo htmlspecialchars($usuario); ?> <?php echo !empty($userData['nombre']) ? '(' . htmlspecialchars($userData['nombre']) . ')' : ''; ?></h1>
+  <h1>Bienvenido al panel, <?php echo $usuario; ?> <?php echo !empty($userData['nombre']) ? '(' . $userData['nombre'] . ')' : ''; ?></h1>
 </div>
 
 <div class="main">
@@ -164,7 +162,7 @@ $conn->close();
   <?php endif; ?>
 
   <?php if (!empty($mensaje)): ?>
-    <div class="mensaje"><?php echo htmlspecialchars($mensaje); ?></div>
+    <div class="mensaje"><?php echo $mensaje; ?></div>
   <?php endif; ?>
 
   <div class="card">
@@ -172,7 +170,7 @@ $conn->close();
     <form method="POST" action="panel.php?usuario=<?php echo urlencode($usuario); ?>">
       <input type="hidden" name="form_tipo" value="perfil" />
       <label>Nombre para mostrar:</label>
-      <input type="text" name="nombre" placeholder="Nuevo nombre" value="<?php echo htmlspecialchars($userData['nombre'] ?? ''); ?>" />
+      <input type="text" name="nombre" placeholder="Nuevo nombre" value="<?php echo $userData['nombre'] ?? ''; ?>" />
       <button type="submit">Guardar cambios</button>
     </form>
     <?php if ($perfilGuardado): ?>
@@ -181,7 +179,7 @@ $conn->close();
   </div>
 
   <div class="card">
-    <h2>💬 Comentarios (XSS persistente simulada)</h2>
+    <h2>💬 Comentarios (XSS persistente)</h2>
     <form method="POST" action="panel.php?usuario=<?php echo urlencode($usuario); ?>">
       <input type="hidden" name="form_tipo" value="comentario" />
       <label>Deja un comentario público:</label>
@@ -217,7 +215,7 @@ $conn->close();
     <h2>🧪 Pruebas de vulnerabilidad</h2>
     <p>Prueba XSS reflejado:</p>
     <code>panel.php?usuario=admin&mensaje=&lt;script&gt;alert(1)&lt;/script&gt;</code>
-    <p>Prueba CSRF con formulario externo.</p>
+    <p>Prueba XSS almacenado enviando <code>&lt;script&gt;alert(1)&lt;/script&gt;</code> como comentario.</p>
   </div>
 
   <div class="logout">
