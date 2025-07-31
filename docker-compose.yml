@@ -1,19 +1,23 @@
+version: '3.8'
+
 services:
+
   apache_server:
     build: ./apache_server
     container_name: apache_server
     ports:
       - "2222:22"
       - "8080:80"
+      - "8443:443"
     networks:
       red_privada:
         ipv4_address: 172.20.0.11
-    red_publica:
-        ipv4_address: 213.100.100.2
     volumes:
       - ./apache_server/web:/var/www/html
+    cap_add:
+      - NET_ADMIN
 
- mysql_server:
+  mysql_server:
     build: ./mysql_server
     container_name: mysql_server
     ports:
@@ -24,6 +28,9 @@ services:
         ipv4_address: 172.20.0.12
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    cap_add:
+      - NET_ADMIN
+
   dns_server:
     build: ./dns_server
     container_name: dns_server
@@ -32,6 +39,8 @@ services:
     networks:
       red_privada:
         ipv4_address: 172.20.0.10
+    cap_add:
+      - NET_ADMIN
 
   mail_server:
     build: ./mail_server
@@ -39,16 +48,19 @@ services:
     hostname: mail_server
     domainname: masterciberseguridad.com
     ports:
-      - "25:25"       # SMTP
-      - "143:143"     # IMAP
-      - "587:587"     # Submission (SMTP with auth)
+      - "25:25"
+      - "143:143"
+      - "587:587"
+    networks:
+      red_privada:
+        ipv4_address: 172.20.0.13
     volumes:
       - ./maildata/mail:/var/mail
       - ./maildata/state:/var/mail-state
       - ./maildata/log:/var/log/mail
       - ./maildata/config:/tmp/docker-mailserver
       - ./sendmail.php:/var/www/html/sendmail.php
-      - ./msmtprc:/etc/msmtprc   # Configuración SMTP
+      - ./msmtprc:/etc/msmtprc
     environment:
       - ENABLE_SPAMASSASSIN=1
       - ENABLE_CLAMAV=0
@@ -57,9 +69,6 @@ services:
       - ONE_DIR=1
       - DMS_DEBUG=0
       - PERMIT_DOCKER=network
-    networks:
-      red_privada:
-        ipv4_address: 172.20.0.13
     cap_add:
       - NET_ADMIN
       - SYS_PTRACE
@@ -74,6 +83,8 @@ services:
     networks:
       red_privada:
         ipv4_address: 172.20.0.14
+    cap_add:
+      - NET_ADMIN
 
   grafana_server:
     build: ./grafana_server
@@ -83,6 +94,8 @@ services:
     networks:
       red_privada:
         ipv4_address: 172.20.0.15
+    cap_add:
+      - NET_ADMIN
 
   user:
     build: ./user
@@ -91,33 +104,32 @@ services:
       - "6080:80"
     networks:
       red_privada:
-        ipv4_address: 172.20.0.100
+        ipv4_address: 172.20.0.5
     dns:
       - 172.20.0.10
     volumes:
       - ./user/home:/root
+    depends_on:
+      - dns_server
+    privileged: true
+    cap_add:
+      - NET_ADMIN
 
-    router:
-    image: alpine
-    command: >
-      sh -c "
-      apk add iptables;
-      echo 1 > /proc/sys/net/ipv4/ip_forward;
-      # NAT para la red privada
-      iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE;
-      # Redirigir tráfico público al servidor web
-      iptables -t nat -A PREROUTING -i eth1 -p tcp --dport 80 -j DNAT --to 192.168.100.2:80;
-      tail -f /dev/null
-      "
-      networks:
-        red_privada:
-          ipv4_address: 172.20.0.1  # Gateway de la red privada
-        red_publica:
-          ipv4_address: 213.100.100.20
-        ports:
-          - "80:80"
-        cat_add:
-          - NET_ADMIN
+  router:
+    build: ./router
+    container_name: router
+    privileged: true
+    ports:
+      - "2225:22"
+    networks:
+      red_privada:
+        ipv4_address: 172.20.0.254
+      red_publica:
+        ipv4_address: 203.0.113.20
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+
   attacker:
     build: ./attacker
     container_name: attacker
@@ -125,11 +137,16 @@ services:
     tty: true
     ports:
       - "2227:22"
+      - "6081:80"
     networks:
       red_ataque:
-        ipv4_address: 10.20.30.10 
+        ipv4_address: 10.20.30.10
       red_publica:
-        ipv4_address: 213.100.100.30
+        ipv4_address: 203.0.113.30
+    depends_on:
+      - router
+    cap_add:
+      - NET_ADMIN
 
 networks:
   red_privada:
@@ -137,7 +154,6 @@ networks:
     ipam:
       config:
         - subnet: 172.20.0.0/24
-          gateway: 172.20.0.1
   red_ataque:
     driver: bridge
     ipam:
@@ -147,6 +163,4 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 213.100.100.0/24
-volumes:
-  user_home:
+        - subnet: 203.0.113.0/24
