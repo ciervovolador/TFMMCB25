@@ -1,30 +1,33 @@
 #!/bin/bash
 
-# Habilitar reenvío de paquetes (routing)
-echo 1 > /proc/sys/net/ipv4/ip_forward
+# Variables
+EXT_IF="eth1"  # Interfaz hacia red pública
+INT_IF="eth0"  # Interfaz hacia red privada
+DNS_IP="172.20.0.10"
+DNS_PORT="53"
+
+# Habilitar forwarding
+sysctl -w net.ipv4.ip_forward=1
 
 # Limpiar reglas anteriores
 iptables -F
 iptables -t nat -F
-iptables -F FORWARD
 
-# Reglas DNAT: Redirige tráfico entrante en interfaz pública (eth1) hacia servicios internos
-iptables -t nat -A PREROUTING -i eth1 -p tcp --dport 80   -j DNAT --to-destination 172.20.0.11:80   # HTTP
-iptables -t nat -A PREROUTING -i eth1 -p tcp --dport 2022 -j DNAT --to-destination 172.20.0.11:22   # SSH Apache
-iptables -t nat -A PREROUTING -i eth1 -p udp --dport 53   -j DNAT --to-destination 172.20.0.10:53   # DNS UDP
-iptables -t nat -A PREROUTING -i eth1 -p tcp --dport 53   -j DNAT --to-destination 172.20.0.10:53   # DNS TCP
+# Configurar NAT (MASQUERADE para tráfico saliente)
+iptables -t nat -A POSTROUTING -o $INT_IF -j MASQUERADE
+iptables -t nat -A POSTROUTING -o $EXT_IF -j MASQUERADE
 
-# Regla SNAT: permite que la red privada acceda a internet usando IP pública
-iptables -t nat -A POSTROUTING -o eth1 -s 172.20.0.0/24 -j SNAT --to-source 203.0.113.20
+# Redirección DNS
+iptables -t nat -A PREROUTING -i $EXT_IF -p udp --dport $DNS_PORT -j DNAT --to-destination $DNS_IP:$DNS_PORT
+iptables -t nat -A PREROUTING -i $EXT_IF -p tcp --dport $DNS_PORT -j DNAT --to-destination $DNS_IP:$DNS_PORT
 
-# Permitir tráfico relacionado y establecido (para respuestas)
-iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
+# Permitir tráfico DNS
+iptables -A FORWARD -p udp -i $EXT_IF -o $INT_IF --dport $DNS_PORT -d $DNS_IP -j ACCEPT
+iptables -A FORWARD -p tcp -i $EXT_IF -o $INT_IF --dport $DNS_PORT -d $DNS_IP -j ACCEPT
+iptables -A FORWARD -p udp -i $INT_IF -o $EXT_IF --sport $DNS_PORT -s $DNS_IP -j ACCEPT
+iptables -A FORWARD -p tcp -i $INT_IF -o $EXT_IF --sport $DNS_PORT -s $DNS_IP -j ACCEPT
 
-# Permitir tráfico nuevo hacia los servicios internos necesarios
-iptables -A FORWARD -p tcp -d 172.20.0.11 --dport 80 -j ACCEPT
-iptables -A FORWARD -p tcp -d 172.20.0.11 --dport 22 -j ACCEPT
-iptables -A FORWARD -p udp -d 172.20.0.10 --dport 53 -j ACCEPT
-iptables -A FORWARD -p tcp -d 172.20.0.10 --dport 53 -j ACCEPT
+echo "Configuración de red y reglas IPTABLES completada."
 
-# Inicia el servicio SSH del contenedor
-exec /usr/sbin/sshd -D
+# Mantener el contenedor vivo
+tail -f /dev/null

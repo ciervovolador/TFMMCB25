@@ -179,34 +179,6 @@ Web Browser
 
 Network;WebBrowser
 
--org.remmina.Remmina.desktop
-Remmina
-Connect to remote desktops
-org.remmina.Remmina
-
-5
-Remote Desktop Client
-remmina-file-wrapper %U
-0
-0
-remmina-file-wrapper
-
-GTK;GNOME;X-GNOME-NetworkSettings;Network
-remote desktop,rdp,vnc,ssh,spice
--org.remmina.Remmina-file.desktop
-Remmina Connect
-Access remote desktops with Remmina
-org.remmina.Remmina
-
-5
-
-remmina-file-wrapper -c %U
-6
-0
-/usr/bin/remmina
-
-GTK;GNOME;X-GNOME-NetworkSettings;Network
-remote desktop,rdp,vnc,ssh,spice
 -thunderbird.desktop
 Thunderbird Mail
 Send and receive mail with Thunderbird
