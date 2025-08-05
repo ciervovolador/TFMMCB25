@@ -1,65 +1,36 @@
 FROM dorowu/ubuntu-desktop-lxde-vnc
 
-# Eliminar fuente obsoleta de Chrome que da error de firma
+# ---- Eliminar fuentes obsoletas (como en user) ----
 RUN rm -f /etc/apt/sources.list.d/google-chrome.list
 
-# Actualizar sistema base e instalar herramientas básicas
+# ---- Instalar herramientas de red (ping, telnet, SSH) ----
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
-      software-properties-common \
-      apt-transport-https \
-      ca-certificates \
-      curl \
-      gnupg2
+        net-tools iproute2 iputils-ping openssh-server telnet && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Añadir repositorio de Metasploit
+# ---- Añadir Metasploit y Nmap ----
+# 1. Añadir repositorio de Metasploit
 RUN curl -fsSL https://apt.metasploit.com/metasploit-framework.gpg.key | gpg --dearmor > /etc/apt/trusted.gpg.d/metasploit.gpg && \
     echo "deb [arch=amd64] https://apt.metasploit.com/ buster main" > /etc/apt/sources.list.d/metasploit.list
 
-# Instalar el resto de herramientas
+# 2. Instalar Metasploit + Nmap + Firefox (para interfaz gráfica)
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
-      nmap \
-      net-tools \
-      iputils-ping \
-      openssh-server \
-      firefox \
-      dnsutils \
-      netcat-openbsd \
-      telnet \
-      iptables \
-      iproute2 \
-      metasploit-framework \
-      attr && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+        metasploit-framework \
+        nmap \
+        firefox && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Configurar root y SSH
+# ---- Configurar SSH (como en user) ----
 RUN echo 'root:toor' | chpasswd && \
     sed -i 's/#PermitRootLogin.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
-    mkdir -p /run/sshd
+    mkdir -p /var/run/sshd && \
+    ssh-keygen -A
 
-# Configuración de red persistente
-RUN echo '#!/bin/bash\n\
-# Esperar a que la interfaz esté disponible\n\
-while [ ! -d /sys/class/net/eth0 ]; do sleep 1; done\n\
-\n\
-# Configurar dirección IP\n\
-ip addr add 203.0.113.30/24 dev eth0 2>/dev/null || true\n\
-ip link set eth0 up\n\
-\n\
-# Configurar ruta por defecto\n\
-ip route del default 2>/dev/null || true\n\
-ip route add default via 203.0.113.20 dev eth0\n\
-\n\
-# Configurar DNS\n\
-echo "nameserver 203.0.113.20" > /etc/resolv.conf\n\
-chattr +i /etc/resolv.conf 2>/dev/null || true\n\
-\n\
-exec "$@"' > /docker-entrypoint.sh && \
-    chmod +x /docker-entrypoint.sh
+# ---- Copiar entrypoint IDÉNTICO al de user ----
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 EXPOSE 22 80 6080
-
-ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["/usr/sbin/sshd", "-D"]
+CMD ["/entrypoint.sh"]

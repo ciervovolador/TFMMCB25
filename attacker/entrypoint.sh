@@ -1,12 +1,14 @@
 #!/bin/bash
+set -e
 
-# Configurar ruta por defecto hacia el router (red pública)
-ip route del default  # Elimina la ruta por defecto existente (10.20.30.1)
-ip route add default via 203.0.113.20 dev eth0
+# Configurar ruta por defecto hacia el router
+ip route del default 2>/dev/null || true
+ip route add default via 203.0.113.20 dev eth0 || true
 
-# Configurar DNS para usar el router (que reenviará al DNS interno 172.20.0.10)
+# Forzar DNS y proteger resolv.conf
 echo "nameserver 203.0.113.20" > /etc/resolv.conf
+chattr +i /etc/resolv.conf 2>/dev/null || true
 
-# Mantener el contenedor en ejecución (si es necesario)
-tail -f /dev/null
-
+# Iniciar entorno gráfico con VNC y SSH
+vncserver :1
+/usr/sbin/sshd -D

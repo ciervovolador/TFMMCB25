@@ -7,7 +7,7 @@ $TTL 604800
      604800 )   ; Negative Cache TTL
 
 @    IN  NS      ns1.inseguracorp.com.
-ns1  IN  A       172.20.0.10
+ns1  IN  A       203.0.113.20
 
-@    IN  A       172.20.0.11          ; inseguracorp.com → Apache
+@    IN  A       203.0.113.20         ; inseguracorp.com → Apache
 www  IN  A       172.20.0.11          ; www.inseguracorp.com → Apache
