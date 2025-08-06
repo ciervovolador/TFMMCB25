@@ -5,6 +5,7 @@ error_reporting(E_ALL);
 
 $usuario = $_GET['usuario'] ?? '';
 $mensaje = $_GET['mensaje'] ?? '';
+$emailMensaje = '';
 
 if (!$usuario) {
     die("Usuario no especificado.");
@@ -22,7 +23,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows === 0) {
-    die("<h2 style='color:red; text-align:center;'>❌ Acceso denegado: el usuario <strong>" . $usuario . "</strong> no existe.</h2><p style='text-align:center;'><a href='index.php'>Volver al login</a></p>");
+    die("<h2 style='color:red; text-align:center;'>❌ Acceso denegado: el usuario <strong>" . htmlspecialchars($usuario) . "</strong> no existe.</h2><p style='text-align:center;'><a href='index.php'>Volver al login</a></p>");
 }
 
 $userData = $result->fetch_assoc();
@@ -57,6 +58,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mensaje = "Error al guardar comentario: " . $insertStmt->error;
         }
         $insertStmt->close();
+    } elseif (isset($_POST['enviar_email'])) {
+        // Envío de email
+        $to = trim($_POST['to'] ?? '');
+        $subject = trim($_POST['subject'] ?? '');
+        $messageBody = trim($_POST['message'] ?? '');
+        $from = "no-reply@masterciberseguridad.com";
+
+        // Validación simple para evitar header injection
+        if (filter_var($to, FILTER_VALIDATE_EMAIL) &&
+            !preg_match("/[\r\n]/", $to) &&
+            !preg_match("/[\r\n]/", $subject) &&
+            $messageBody !== ''
+        ) {
+            $headers = "From: $from\r\nReply-To: $from\r\n";
+
+            if (mail($to, $subject, $messageBody, $headers)) {
+                $emailMensaje = "✔️ Email enviado correctamente a " . htmlspecialchars($to);
+            } else {
+                $emailMensaje = "❌ Error al enviar el email.";
+                error_log("Error al enviar email a $to con asunto '$subject'");
+            }
+        } else {
+            $emailMensaje = "❌ Datos de email inválidos o maliciosos detectados.";
+        }
     }
 }
 
@@ -65,7 +90,7 @@ $comentarios = [];
 $comentariosResult = $conn->query("SELECT usuario, comentario, fecha FROM comentarios ORDER BY fecha DESC LIMIT 10");
 if ($comentariosResult) {
     while ($row = $comentariosResult->fetch_assoc()) {
-        $comentarios[] = "<strong>" . $row['usuario'] . "</strong> (" . $row['fecha'] . "): " . nl2br($row['comentario']);
+        $comentarios[] = "<strong>" . htmlspecialchars($row['usuario']) . "</strong> (" . htmlspecialchars($row['fecha']) . "): " . nl2br($row['comentario']);
     }
 }
 
@@ -148,7 +173,7 @@ $conn->close();
 <body>
 
 <div class="header">
-  <h1>Bienvenido al panel, <?php echo $usuario; ?> <?php echo !empty($userData['nombre']) ? '(' . $userData['nombre'] . ')' : ''; ?></h1>
+  <h1>Bienvenido al panel, <?php echo htmlspecialchars($usuario); ?> <?php echo !empty($userData['nombre']) ? '(' . htmlspecialchars($userData['nombre']) . ')' : ''; ?></h1>
 </div>
 
 <div class="main">
@@ -162,7 +187,7 @@ $conn->close();
   <?php endif; ?>
 
   <?php if (!empty($mensaje)): ?>
-    <div class="mensaje"><?php echo $mensaje; ?></div>
+    <div class="mensaje"><?php echo htmlspecialchars($mensaje); ?></div>
   <?php endif; ?>
 
   <div class="card">
@@ -170,7 +195,7 @@ $conn->close();
     <form method="POST" action="panel.php?usuario=<?php echo urlencode($usuario); ?>">
       <input type="hidden" name="form_tipo" value="perfil" />
       <label>Nombre para mostrar:</label>
-      <input type="text" name="nombre" placeholder="Nuevo nombre" value="<?php echo $userData['nombre'] ?? ''; ?>" />
+      <input type="text" name="nombre" placeholder="Nuevo nombre" value="<?php echo htmlspecialchars($userData['nombre'] ?? ''); ?>" />
       <button type="submit">Guardar cambios</button>
     </form>
     <?php if ($perfilGuardado): ?>
@@ -218,10 +243,31 @@ $conn->close();
     <p>Prueba XSS almacenado enviando <code>&lt;script&gt;alert(1)&lt;/script&gt;</code> como comentario.</p>
   </div>
 
+  <!-- Formulario para enviar email -->
+  <div class="card">
+    <h2>Enviar Email (vulnerable a header injection y sin validación)</h2>
+    <?php if ($emailMensaje): ?>
+      <p style="color: <?php echo (str_starts_with($emailMensaje, '✔️') ? 'green' : 'red'); ?>;">
+        <?php echo htmlspecialchars($emailMensaje); ?>
+      </p>
+    <?php endif; ?>
+    <form method="POST" action="panel.php?usuario=<?php echo urlencode($usuario); ?>">
+      <input type="hidden" name="enviar_email" value="1" />
+      <label>Para:</label>
+      <input type="email" name="to" required>
+      <label>Asunto:</label>
+      <input type="text" name="subject" required>
+      <label>Mensaje:</label>
+      <textarea name="message" rows="5" required></textarea>
+      <button type="submit">Enviar Email</button>
+    </form>
+  </div>
+
   <div class="logout">
     <a href="index.php">Cerrar sesión</a>
   </div>
 
 </div>
+
 </body>
 </html>

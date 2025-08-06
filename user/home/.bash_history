@@ -13,3 +13,4 @@ apt-get update
 sudo apt-get update
 dig @172.20.0.10 inseguracorp.com
 dig @172.20.0.10 masterciberseguridad.com
+curl http://172.20.0.15:3000

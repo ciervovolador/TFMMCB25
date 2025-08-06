@@ -12,8 +12,11 @@ services:
         ipv4_address: 172.20.0.11
     volumes:
       - ./apache_server/web:/var/www/html
+      - ./apache_server/msmtprc:/etc/msmtprc
     cap_add:
       - NET_ADMIN
+    depends_on:
+      - mail_server
 
   mysql_server:
     build: ./mysql_server

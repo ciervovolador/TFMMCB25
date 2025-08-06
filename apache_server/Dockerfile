@@ -38,6 +38,14 @@ RUN a2ensite default-ssl
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
+# Copiar configuración msmtp
+COPY msmtprc /etc/msmtprc
+RUN chmod 600 /etc/msmtprc
+
+# Configurar PHP para que use msmtp como sendmail
+RUN echo "sendmail_path = /usr/bin/msmtp -t" > /etc/php/8.1/apache2/conf.d/30-msmtp.ini
+
+
 COPY web/ /var/www/html/
 
 EXPOSE 80 443 22
