@@ -147,6 +147,8 @@ services:
       - router
     cap_add:
       - NET_ADMIN
+    volumes:
+      - ./attacker/home:/root
 
 networks:
   red_privada:
