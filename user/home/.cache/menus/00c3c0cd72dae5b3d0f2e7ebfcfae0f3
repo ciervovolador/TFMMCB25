@@ -279,6 +279,20 @@ lxlock
 
 
 
+-userapp-Thunderbird-INWTA3.desktop
+Thunderbird
+Custom definition for Thunderbird
+
+
+3
+
+/usr/bin/thunderbird %u
+4
+0
+
+
+
+
 
 +Development
 Programming

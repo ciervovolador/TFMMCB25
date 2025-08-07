@@ -1,0 +1,293 @@
+2025-08-07T16:03:14.229387+00:00 mail_server dovecot: master: Dovecot v2.3.19.1 (9b53102964) starting up for imap, lmtp
+2025-08-07T16:03:14.980447+00:00 mail_server opendkim[697]: OpenDKIM Filter v2.11.0 starting (args: -f)
+2025-08-07T16:03:15.287048+00:00 mail_server opendmarc[712]: OpenDMARC Filter v1.4.2 starting (args: -f -p inet:8893@localhost -P /var/run/opendmarc/opendmarc.pid)
+2025-08-07T16:03:15.287196+00:00 mail_server opendmarc[712]: additional trusted authentication services: mail_server.masterciberseguridad.com
+2025-08-07T16:03:16.781095+00:00 mail_server postfix/postfix-script[809]: starting the Postfix mail system
+2025-08-07T16:03:16.822805+00:00 mail_server postfix/master[810]: daemon started -- version 3.7.11, configuration /etc/postfix
+2025-08-07T16:03:18.156767+00:00 mail_server amavis[753]: starting. /usr/sbin/amavisd at mail_server.masterciberseguridad.com amavis-2.13.0 (20230106), Unicode aware, LC_CTYPE="C.UTF-8"
+2025-08-07T16:03:18.157070+00:00 mail_server amavis[753]: perl=5.036000, user=, EUID: 999 (999);  group=(), EGID: 999 999 (999 999)
+2025-08-07T16:03:18.867314+00:00 mail_server amavis[753]: Net::Server: Group Not Defined.  Defaulting to EGID '999 999'
+2025-08-07T16:03:18.867397+00:00 mail_server amavis[753]: Net::Server: User Not Defined.  Defaulting to EUID '999'
+2025-08-07T16:03:18.884991+00:00 mail_server amavis[753]: No ext program for   .zoo, tried: zoo
+2025-08-07T16:03:18.885184+00:00 mail_server amavis[753]: No ext program for   .doc, tried: ripole
+2025-08-07T16:03:18.887568+00:00 mail_server amavis[753]: No ext program for   .zst, tried: unzstd
+2025-08-07T16:03:18.888422+00:00 mail_server amavis[753]: No decoder for       .F   
+2025-08-07T16:03:18.888654+00:00 mail_server amavis[753]: No decoder for       .doc 
+2025-08-07T16:03:18.888669+00:00 mail_server amavis[753]: No decoder for       .zoo 
+2025-08-07T16:03:18.889143+00:00 mail_server amavis[753]: No decoder for       .zst 
+2025-08-07T16:04:46.539829+00:00 mail_server dovecot: master: Dovecot v2.3.19.1 (9b53102964) starting up for imap, lmtp
+2025-08-07T16:04:47.273421+00:00 mail_server opendkim[631]: OpenDKIM Filter v2.11.0 starting (args: -f)
+2025-08-07T16:04:47.579799+00:00 mail_server opendmarc[640]: OpenDMARC Filter v1.4.2 starting (args: -f -p inet:8893@localhost -P /var/run/opendmarc/opendmarc.pid)
+2025-08-07T16:04:47.579831+00:00 mail_server opendmarc[640]: additional trusted authentication services: mail_server.masterciberseguridad.com
+2025-08-07T16:04:48.892218+00:00 mail_server postfix/postfix-script[741]: starting the Postfix mail system
+2025-08-07T16:04:48.922010+00:00 mail_server postfix/master[742]: daemon started -- version 3.7.11, configuration /etc/postfix
+2025-08-07T16:04:49.854263+00:00 mail_server amavis[690]: starting. /usr/sbin/amavisd at mail_server.masterciberseguridad.com amavis-2.13.0 (20230106), Unicode aware, LC_CTYPE="C.UTF-8"
+2025-08-07T16:04:49.854354+00:00 mail_server amavis[690]: perl=5.036000, user=, EUID: 999 (999);  group=(), EGID: 999 999 (999 999)
+2025-08-07T16:04:50.327575+00:00 mail_server amavis[690]: Net::Server: Group Not Defined.  Defaulting to EGID '999 999'
+2025-08-07T16:04:50.327819+00:00 mail_server amavis[690]: Net::Server: User Not Defined.  Defaulting to EUID '999'
+2025-08-07T16:04:50.341095+00:00 mail_server amavis[690]: No ext program for   .zoo, tried: zoo
+2025-08-07T16:04:50.341406+00:00 mail_server amavis[690]: No ext program for   .doc, tried: ripole
+2025-08-07T16:04:50.342652+00:00 mail_server amavis[690]: No ext program for   .zst, tried: unzstd
+2025-08-07T16:04:50.342711+00:00 mail_server amavis[690]: No decoder for       .F   
+2025-08-07T16:04:50.342728+00:00 mail_server amavis[690]: No decoder for       .doc 
+2025-08-07T16:04:50.342783+00:00 mail_server amavis[690]: No decoder for       .zoo 
+2025-08-07T16:04:50.342838+00:00 mail_server amavis[690]: No decoder for       .zst 
+2025-08-07T16:06:17.813971+00:00 mail_server postfix/submission/smtpd[932]: connect from apache_server.tfm_red_privada[172.20.0.11]
+2025-08-07T16:06:17.818249+00:00 mail_server opendmarc[640]: ignoring connection from apache_server.tfm_red_privada
+2025-08-07T16:06:17.838984+00:00 mail_server postfix/submission/smtpd[932]: lost connection after CONNECT from apache_server.tfm_red_privada[172.20.0.11]
+2025-08-07T16:06:17.839082+00:00 mail_server postfix/submission/smtpd[932]: disconnect from apache_server.tfm_red_privada[172.20.0.11] commands=0/0
+2025-08-07T16:06:53.117826+00:00 mail_server postfix/postscreen[986]: cache btree:/var/lib/postfix/postscreen_cache full cleanup: retained=0 dropped=0 entries
+2025-08-07T16:06:53.118309+00:00 mail_server postfix/postscreen[986]: CONNECT from [172.20.0.11]:53200 to [172.20.0.13]:25
+2025-08-07T16:06:53.118343+00:00 mail_server postfix/postscreen[986]: ALLOWLISTED [172.20.0.11]:53200
+2025-08-07T16:06:53.133846+00:00 mail_server postfix/smtpd[987]: connect from apache_server.tfm_red_privada[172.20.0.11]
+2025-08-07T16:06:53.136438+00:00 mail_server opendmarc[640]: ignoring connection from apache_server.tfm_red_privada
+2025-08-07T16:06:53.163448+00:00 mail_server postfix/smtpd[987]: 27DBA18A71B: client=apache_server.tfm_red_privada[172.20.0.11]
+2025-08-07T16:06:53.207231+00:00 mail_server postfix/cleanup[989]: 27DBA18A71B: message-id=<>
+2025-08-07T16:06:53.210424+00:00 mail_server opendkim[631]: 27DBA18A71B: no signing table match for 'no-reply@masterciberseguridad.com'
+2025-08-07T16:06:53.213204+00:00 mail_server opendkim[631]: 27DBA18A71B: no signature data
+2025-08-07T16:06:53.215764+00:00 mail_server postfix/qmgr[745]: 27DBA18A71B: from=<no-reply@masterciberseguridad.com>, size=389, nrcpt=1 (queue active)
+2025-08-07T16:06:53.216867+00:00 mail_server postfix/smtpd[987]: disconnect from apache_server.tfm_red_privada[172.20.0.11] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+2025-08-07T16:06:55.155852+00:00 mail_server postfix/smtpd-amavis/smtpd[998]: connect from localhost[127.0.0.1]
+2025-08-07T16:06:55.159158+00:00 mail_server postfix/smtpd-amavis/smtpd[998]: 26CEE18A723: client=localhost[127.0.0.1]
+2025-08-07T16:06:55.161329+00:00 mail_server postfix/cleanup[989]: 26CEE18A723: message-id=<20250807160655.26CEE18A723@mail_server.masterciberseguridad.com>
+2025-08-07T16:06:55.163852+00:00 mail_server postfix/qmgr[745]: 26CEE18A723: from=<no-reply@masterciberseguridad.com>, size=665, nrcpt=1 (queue active)
+2025-08-07T16:06:55.170867+00:00 mail_server amavis[795]: (00795-01) Passed CLEAN {RelayedOpenRelay}, [172.20.0.11]:53200 <no-reply@masterciberseguridad.com> -> <tu_correo@ejemplo.com>, Queue-ID: 27DBA18A71B, mail_id: 0upnLv_gCR_T, Hits: 0.347, size: 355, queued_as: 26CEE18A723, 1930 ms
+2025-08-07T16:06:55.172717+00:00 mail_server postfix/smtp-amavis/smtp[990]: 27DBA18A71B: to=<tu_correo@ejemplo.com>, relay=127.0.0.1[127.0.0.1]:10024, delay=2, delays=0.07/0.02/0.01/1.9, dsn=2.0.0, status=sent (250 2.0.0 from MTA(smtp:[127.0.0.1]:10025): 250 2.0.0 Ok: queued as 26CEE18A723)
+2025-08-07T16:06:55.174033+00:00 mail_server postfix/qmgr[745]: 27DBA18A71B: removed
+2025-08-07T16:06:55.238864+00:00 mail_server postfix/smtp[999]: 26CEE18A723: to=<tu_correo@ejemplo.com>, relay=none, delay=0.07, delays=0.01/0.02/0.04/0, dsn=5.1.0, status=bounced (Domain ejemplo.com does not accept mail (nullMX))
+2025-08-07T16:06:55.241362+00:00 mail_server postfix/cleanup[989]: 3AC0818A725: message-id=<20250807160655.3AC0818A725@mail_server.masterciberseguridad.com>
+2025-08-07T16:06:55.242827+00:00 mail_server postfix/bounce[1000]: 26CEE18A723: sender non-delivery notification: 3AC0818A725
+2025-08-07T16:06:55.243044+00:00 mail_server postfix/qmgr[745]: 3AC0818A725: from=<>, size=2778, nrcpt=1 (queue active)
+2025-08-07T16:06:55.243503+00:00 mail_server postfix/qmgr[745]: 26CEE18A723: removed
+2025-08-07T16:06:55.281384+00:00 mail_server dovecot: lmtp(1002): Connect from local
+2025-08-07T16:06:55.301526+00:00 mail_server dovecot: lmtp(no-reply@masterciberseguridad.com)<1002><RQ7CEB/PlGjqAwAACsJeBQ>: sieve: msgid=<20250807160655.3AC0818A725@mail_server.masterciberseguridad.com>: stored mail into mailbox 'INBOX'
+2025-08-07T16:06:55.303045+00:00 mail_server postfix/lmtp[1001]: 3AC0818A725: to=<no-reply@masterciberseguridad.com>, relay=mail_server.masterciberseguridad.com[/var/run/dovecot/lmtp], delay=0.06, delays=0/0.01/0.03/0.02, dsn=2.0.0, status=sent (250 2.0.0 <no-reply@masterciberseguridad.com> RQ7CEB/PlGjqAwAACsJeBQ Saved)
+2025-08-07T16:06:55.303201+00:00 mail_server dovecot: lmtp(1002): Disconnect from local: Logged out (state=READY)
+2025-08-07T16:06:55.303397+00:00 mail_server postfix/qmgr[745]: 3AC0818A725: removed
+2025-08-07T16:07:04.707229+00:00 mail_server postfix/postscreen[986]: CONNECT from [172.20.0.11]:36114 to [172.20.0.13]:25
+2025-08-07T16:07:04.707268+00:00 mail_server postfix/postscreen[986]: ALLOWLISTED [172.20.0.11]:36114
+2025-08-07T16:07:04.708158+00:00 mail_server postfix/smtpd[987]: connect from apache_server.tfm_red_privada[172.20.0.11]
+2025-08-07T16:07:04.710431+00:00 mail_server opendmarc[640]: ignoring connection from apache_server.tfm_red_privada
+2025-08-07T16:07:04.713266+00:00 mail_server postfix/smtpd[987]: AE19B18A725: client=apache_server.tfm_red_privada[172.20.0.11]
+2025-08-07T16:07:04.756151+00:00 mail_server postfix/cleanup[989]: AE19B18A725: message-id=<>
+2025-08-07T16:07:04.759338+00:00 mail_server opendkim[631]: AE19B18A725: no signing table match for 'no-reply@masterciberseguridad.com'
+2025-08-07T16:07:04.761259+00:00 mail_server opendkim[631]: AE19B18A725: no signature data
+2025-08-07T16:07:04.763279+00:00 mail_server postfix/qmgr[745]: AE19B18A725: from=<no-reply@masterciberseguridad.com>, size=393, nrcpt=1 (queue active)
+2025-08-07T16:07:04.765035+00:00 mail_server postfix/smtpd[987]: disconnect from apache_server.tfm_red_privada[172.20.0.11] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+2025-08-07T16:07:05.475699+00:00 mail_server postfix/smtpd-amavis/smtpd[1022]: connect from localhost[127.0.0.1]
+2025-08-07T16:07:05.479757+00:00 mail_server postfix/smtpd-amavis/smtpd[1022]: 7519518A732: client=localhost[127.0.0.1]
+2025-08-07T16:07:05.481862+00:00 mail_server postfix/cleanup[989]: 7519518A732: message-id=<20250807160705.7519518A732@mail_server.masterciberseguridad.com>
+2025-08-07T16:07:05.484711+00:00 mail_server postfix/qmgr[745]: 7519518A732: from=<no-reply@masterciberseguridad.com>, size=673, nrcpt=1 (queue active)
+2025-08-07T16:07:05.492769+00:00 mail_server amavis[796]: (00796-01) Passed CLEAN {RelayedOpenRelay}, [172.20.0.11]:36114 <no-reply@masterciberseguridad.com> -> <diegoj_garcia@hotmail.com>, Queue-ID: AE19B18A725, mail_id: 37g7WDtHkj82, Hits: 0.347, size: 359, queued_as: 7519518A732, 724 ms
+2025-08-07T16:07:05.494757+00:00 mail_server postfix/smtp-amavis/smtp[990]: AE19B18A725: to=<diegoj_garcia@hotmail.com>, relay=127.0.0.1[127.0.0.1]:10024, delay=0.78, delays=0.05/0/0.02/0.72, dsn=2.0.0, status=sent (250 2.0.0 from MTA(smtp:[127.0.0.1]:10025): 250 2.0.0 Ok: queued as 7519518A732)
+2025-08-07T16:07:05.495039+00:00 mail_server postfix/qmgr[745]: AE19B18A725: removed
+2025-08-07T16:07:06.414055+00:00 mail_server postfix/smtp[999]: 7519518A732: to=<diegoj_garcia@hotmail.com>, relay=hotmail-com.olc.protection.outlook.com[52.101.41.29]:25, delay=0.93, delays=0.01/0/0.74/0.18, dsn=5.7.1, status=bounced (host hotmail-com.olc.protection.outlook.com[52.101.41.29] said: 550 5.7.1 Service unavailable, Client host [83.165.107.254] blocked using Spamhaus. To request removal from this list see https://www.spamhaus.org/query/ip/83.165.107.254 (AS3130). [Name=Protocol Filter Agent][AGT=PFA][MxId=11BBA03C7CEE0EBB] [SJ1PEPF00002326.namprd03.prod.outlook.com 2025-08-07T16:07:06.362Z 08DDD01E4585CC78] (in reply to MAIL FROM command))
+2025-08-07T16:07:06.425923+00:00 mail_server postfix/smtp[999]: 7519518A732: lost connection with hotmail-com.olc.protection.outlook.com[52.101.41.29] while sending RCPT TO
+2025-08-07T16:07:06.429131+00:00 mail_server postfix/cleanup[989]: 6856218A733: message-id=<20250807160706.6856218A733@mail_server.masterciberseguridad.com>
+2025-08-07T16:07:06.431552+00:00 mail_server postfix/bounce[1000]: 7519518A732: sender non-delivery notification: 6856218A733
+2025-08-07T16:07:06.431753+00:00 mail_server postfix/qmgr[745]: 6856218A733: from=<>, size=3564, nrcpt=1 (queue active)
+2025-08-07T16:07:06.432524+00:00 mail_server postfix/qmgr[745]: 7519518A732: removed
+2025-08-07T16:07:06.434678+00:00 mail_server dovecot: lmtp(1002): Connect from local
+2025-08-07T16:07:06.445179+00:00 mail_server dovecot: lmtp(no-reply@masterciberseguridad.com)<1002><4LffGSrPlGjqAwAACsJeBQ>: sieve: msgid=<20250807160706.6856218A733@mail_server.masterciberseguridad.com>: stored mail into mailbox 'INBOX'
+2025-08-07T16:07:06.446117+00:00 mail_server postfix/lmtp[1001]: 6856218A733: to=<no-reply@masterciberseguridad.com>, relay=mail_server.masterciberseguridad.com[/var/run/dovecot/lmtp], delay=0.02, delays=0/0/0/0.01, dsn=2.0.0, status=sent (250 2.0.0 <no-reply@masterciberseguridad.com> 4LffGSrPlGjqAwAACsJeBQ Saved)
+2025-08-07T16:07:06.446485+00:00 mail_server postfix/qmgr[745]: 6856218A733: removed
+2025-08-07T16:07:06.447101+00:00 mail_server dovecot: lmtp(1002): Disconnect from local: Logged out (state=READY)
+2025-08-07T16:07:54.991373+00:00 mail_server postfix/postscreen[986]: CONNECT from [172.20.0.11]:40946 to [172.20.0.13]:25
+2025-08-07T16:07:54.991721+00:00 mail_server postfix/postscreen[986]: ALLOWLISTED [172.20.0.11]:40946
+2025-08-07T16:07:54.993551+00:00 mail_server postfix/smtpd[987]: connect from apache_server.tfm_red_privada[172.20.0.11]
+2025-08-07T16:07:54.995518+00:00 mail_server opendmarc[640]: ignoring connection from apache_server.tfm_red_privada
+2025-08-07T16:07:54.997820+00:00 mail_server postfix/smtpd[987]: F38F218A72E: client=apache_server.tfm_red_privada[172.20.0.11]
+2025-08-07T16:07:55.041083+00:00 mail_server postfix/cleanup[989]: F38F218A72E: message-id=<>
+2025-08-07T16:07:55.042448+00:00 mail_server opendkim[631]: F38F218A72E: no signing table match for 'no-reply@masterciberseguridad.com'
+2025-08-07T16:07:55.044979+00:00 mail_server opendkim[631]: F38F218A72E: no signature data
+2025-08-07T16:07:55.046850+00:00 mail_server postfix/qmgr[745]: F38F218A72E: from=<no-reply@masterciberseguridad.com>, size=387, nrcpt=1 (queue active)
+2025-08-07T16:07:55.047637+00:00 mail_server postfix/smtpd[987]: disconnect from apache_server.tfm_red_privada[172.20.0.11] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+2025-08-07T16:07:55.696018+00:00 mail_server postfix/smtpd-amavis/smtpd[998]: A9E4B18A732: client=localhost[127.0.0.1]
+2025-08-07T16:07:55.698098+00:00 mail_server postfix/cleanup[989]: A9E4B18A732: message-id=<20250807160755.A9E4B18A732@mail_server.masterciberseguridad.com>
+2025-08-07T16:07:55.699976+00:00 mail_server postfix/smtpd-amavis/smtpd[998]: disconnect from localhost[127.0.0.1] ehlo=1 mail=2 rcpt=2 data=2 noop=1 quit=1 commands=9
+2025-08-07T16:07:55.700479+00:00 mail_server postfix/qmgr[745]: A9E4B18A732: from=<no-reply@masterciberseguridad.com>, size=661, nrcpt=1 (queue active)
+2025-08-07T16:07:55.707249+00:00 mail_server amavis[795]: (00795-02) Passed CLEAN {RelayedOpenRelay}, [172.20.0.11]:40946 <no-reply@masterciberseguridad.com> -> <zaszeszis@gmail.com>, Queue-ID: F38F218A72E, mail_id: fkKt3BGTupik, Hits: 0.347, size: 353, queued_as: A9E4B18A732, 657 ms
+2025-08-07T16:07:55.709682+00:00 mail_server postfix/smtp-amavis/smtp[990]: F38F218A72E: to=<zaszeszis@gmail.com>, relay=127.0.0.1[127.0.0.1]:10024, delay=0.71, delays=0.05/0/0/0.66, dsn=2.0.0, status=sent (250 2.0.0 from MTA(smtp:[127.0.0.1]:10025): 250 2.0.0 Ok: queued as A9E4B18A732)
+2025-08-07T16:07:55.710013+00:00 mail_server postfix/qmgr[745]: F38F218A72E: removed
+2025-08-07T16:07:57.064911+00:00 mail_server postfix/smtp[999]: A9E4B18A732: prepend: header Message-Id: <20250807160755.A9E4B18A732@mail_server.masterci: X-MS-Reactions: disallow
+2025-08-07T16:07:57.505713+00:00 mail_server postfix/smtp[999]: A9E4B18A732: to=<zaszeszis@gmail.com>, relay=gmail-smtp-in.l.google.com[74.125.206.26]:25, delay=1.8, delays=0.01/0/1.1/0.71, dsn=5.7.1, status=bounced (host gmail-smtp-in.l.google.com[74.125.206.26] said: 550-5.7.1 [83.165.107.254] The IP you're using to send mail is not authorized to 550-5.7.1 send email directly to our servers. Please use the SMTP relay at your 550-5.7.1 service provider instead. For more information, go to 550 5.7.1  https://support.google.com/mail/?p=NotAuthorizedError ffacd0b85a97d-3b8d9cbb172si7552661f8f.73 - gsmtp (in reply to end of DATA command))
+2025-08-07T16:07:57.509394+00:00 mail_server postfix/cleanup[989]: 7C06E18A733: message-id=<20250807160757.7C06E18A733@mail_server.masterciberseguridad.com>
+2025-08-07T16:07:57.513532+00:00 mail_server postfix/qmgr[745]: 7C06E18A733: from=<>, size=3533, nrcpt=1 (queue active)
+2025-08-07T16:07:57.513671+00:00 mail_server postfix/bounce[1000]: A9E4B18A732: sender non-delivery notification: 7C06E18A733
+2025-08-07T16:07:57.514024+00:00 mail_server postfix/qmgr[745]: A9E4B18A732: removed
+2025-08-07T16:07:57.515044+00:00 mail_server dovecot: lmtp(1002): Connect from local
+2025-08-07T16:07:57.525254+00:00 mail_server dovecot: lmtp(no-reply@masterciberseguridad.com)<1002><IG2pHl3PlGjqAwAACsJeBQ>: sieve: msgid=<20250807160757.7C06E18A733@mail_server.masterciberseguridad.com>: stored mail into mailbox 'INBOX'
+2025-08-07T16:07:57.526020+00:00 mail_server dovecot: lmtp(1002): Disconnect from local: Logged out (state=READY)
+2025-08-07T16:07:57.526248+00:00 mail_server postfix/lmtp[1001]: 7C06E18A733: to=<no-reply@masterciberseguridad.com>, relay=mail_server.masterciberseguridad.com[/var/run/dovecot/lmtp], delay=0.02, delays=0.01/0/0/0.01, dsn=2.0.0, status=sent (250 2.0.0 <no-reply@masterciberseguridad.com> IG2pHl3PlGjqAwAACsJeBQ Saved)
+2025-08-07T16:07:57.526649+00:00 mail_server postfix/qmgr[745]: 7C06E18A733: removed
+2025-08-07T16:09:43.643212+00:00 mail_server postfix/postscreen[1264]: CONNECT from [172.20.0.11]:54916 to [172.20.0.13]:25
+2025-08-07T16:09:43.643727+00:00 mail_server postfix/postscreen[1264]: ALLOWLISTED [172.20.0.11]:54916
+2025-08-07T16:09:43.675894+00:00 mail_server postfix/smtpd[1265]: connect from apache_server.tfm_red_privada[172.20.0.11]
+2025-08-07T16:09:43.678995+00:00 mail_server opendmarc[640]: ignoring connection from apache_server.tfm_red_privada
+2025-08-07T16:09:43.694830+00:00 mail_server postfix/smtpd[1265]: A974618A732: client=apache_server.tfm_red_privada[172.20.0.11]
+2025-08-07T16:09:43.737855+00:00 mail_server postfix/cleanup[1267]: A974618A732: message-id=<>
+2025-08-07T16:09:43.740817+00:00 mail_server opendkim[631]: A974618A732: no signing table match for 'no-reply@masterciberseguridad.com'
+2025-08-07T16:09:43.743976+00:00 mail_server opendkim[631]: A974618A732: no signature data
+2025-08-07T16:09:43.747130+00:00 mail_server postfix/smtpd[1265]: disconnect from apache_server.tfm_red_privada[172.20.0.11] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+2025-08-07T16:09:43.752005+00:00 mail_server postfix/qmgr[745]: A974618A732: from=<no-reply@masterciberseguridad.com>, size=440, nrcpt=1 (queue active)
+2025-08-07T16:09:45.027877+00:00 mail_server postfix/smtpd-amavis/smtpd[1022]: 069D918A733: client=localhost[127.0.0.1]
+2025-08-07T16:09:45.037288+00:00 mail_server postfix/cleanup[1267]: 069D918A733: message-id=<20250807160945.069D918A733@mail_server.masterciberseguridad.com>
+2025-08-07T16:09:45.039661+00:00 mail_server postfix/smtpd-amavis/smtpd[1022]: disconnect from localhost[127.0.0.1] ehlo=1 mail=2 rcpt=2 data=2 noop=1 quit=1 commands=9
+2025-08-07T16:09:45.041084+00:00 mail_server postfix/qmgr[745]: 069D918A733: from=<no-reply@masterciberseguridad.com>, size=720, nrcpt=1 (queue active)
+2025-08-07T16:09:45.048305+00:00 mail_server amavis[796]: (00796-02) Passed CLEAN {RelayedOpenRelay}, [172.20.0.11]:54916 <no-reply@masterciberseguridad.com> -> <diegoj_garcia@hotmail.com>, Queue-ID: A974618A732, mail_id: qOD14Zn0Rtpy, Hits: -0.86, size: 406, queued_as: 069D918A733, 1275 ms
+2025-08-07T16:09:45.050500+00:00 mail_server postfix/smtp-amavis/smtp[1268]: A974618A732: to=<diegoj_garcia@hotmail.com>, relay=127.0.0.1[127.0.0.1]:10024, delay=1.4, delays=0.07/0.02/0.01/1.3, dsn=2.0.0, status=sent (250 2.0.0 from MTA(smtp:[127.0.0.1]:10025): 250 2.0.0 Ok: queued as 069D918A733)
+2025-08-07T16:09:45.061879+00:00 mail_server postfix/qmgr[745]: A974618A732: removed
+2025-08-07T16:09:45.715531+00:00 mail_server postfix/smtp[1273]: 069D918A733: to=<diegoj_garcia@hotmail.com>, relay=hotmail-com.olc.protection.outlook.com[52.101.11.5]:25, delay=0.69, delays=0.03/0.08/0.47/0.12, dsn=5.7.1, status=bounced (host hotmail-com.olc.protection.outlook.com[52.101.11.5] said: 550 5.7.1 Service unavailable, Client host [83.165.107.254] blocked using Spamhaus. To request removal from this list see https://www.spamhaus.org/query/ip/83.165.107.254 (AS3130). [Name=Protocol Filter Agent][AGT=PFA][MxId=11BBA324B4B145A2] [SN1PEPF0002BA4F.namprd03.prod.outlook.com 2025-08-07T16:09:45.704Z 08DDD1925F569E23] (in reply to MAIL FROM command))
+2025-08-07T16:09:45.718205+00:00 mail_server postfix/smtp[1273]: 069D918A733: lost connection with hotmail-com.olc.protection.outlook.com[52.101.11.5] while sending RCPT TO
+2025-08-07T16:09:45.722569+00:00 mail_server postfix/cleanup[1267]: B01F718A734: message-id=<20250807160945.B01F718A734@mail_server.masterciberseguridad.com>
+2025-08-07T16:09:45.724644+00:00 mail_server postfix/qmgr[745]: B01F718A734: from=<>, size=3610, nrcpt=1 (queue active)
+2025-08-07T16:09:45.724685+00:00 mail_server postfix/bounce[1277]: 069D918A733: sender non-delivery notification: B01F718A734
+2025-08-07T16:09:45.725257+00:00 mail_server postfix/qmgr[745]: 069D918A733: removed
+2025-08-07T16:09:45.759771+00:00 mail_server dovecot: lmtp(1279): Connect from local
+2025-08-07T16:09:45.782913+00:00 mail_server dovecot: lmtp(no-reply@masterciberseguridad.com)<1279><N+VDLcnPlGj/BAAACsJeBQ>: sieve: msgid=<20250807160945.B01F718A734@mail_server.masterciberseguridad.com>: stored mail into mailbox 'INBOX'
+2025-08-07T16:09:45.783772+00:00 mail_server dovecot: lmtp(1279): Disconnect from local: Logged out (state=READY)
+2025-08-07T16:09:45.784003+00:00 mail_server postfix/lmtp[1278]: B01F718A734: to=<no-reply@masterciberseguridad.com>, relay=mail_server.masterciberseguridad.com[/var/run/dovecot/lmtp], delay=0.06, delays=0/0.01/0.02/0.02, dsn=2.0.0, status=sent (250 2.0.0 <no-reply@masterciberseguridad.com> N+VDLcnPlGj/BAAACsJeBQ Saved)
+2025-08-07T16:09:45.784401+00:00 mail_server postfix/qmgr[745]: B01F718A734: removed
+2025-08-07T16:16:37.083159+00:00 mail_server postfix/postscreen[1892]: CONNECT from [172.20.0.11]:39092 to [172.20.0.13]:25
+2025-08-07T16:16:37.083429+00:00 mail_server postfix/postscreen[1892]: ALLOWLISTED [172.20.0.11]:39092
+2025-08-07T16:16:37.115973+00:00 mail_server postfix/smtpd[1893]: connect from apache_server.tfm_red_privada[172.20.0.11]
+2025-08-07T16:16:37.119688+00:00 mail_server opendmarc[640]: ignoring connection from apache_server.tfm_red_privada
+2025-08-07T16:16:37.148983+00:00 mail_server postfix/smtpd[1893]: 2455818A733: client=apache_server.tfm_red_privada[172.20.0.11]
+2025-08-07T16:16:37.193157+00:00 mail_server postfix/cleanup[1896]: 2455818A733: message-id=<>
+2025-08-07T16:16:37.195152+00:00 mail_server opendkim[631]: 2455818A733: no signing table match for 'no-reply@masterciberseguridad.com'
+2025-08-07T16:16:37.197633+00:00 mail_server opendkim[631]: 2455818A733: no signature data
+2025-08-07T16:16:37.199832+00:00 mail_server postfix/qmgr[745]: 2455818A733: from=<no-reply@masterciberseguridad.com>, size=440, nrcpt=1 (queue active)
+2025-08-07T16:16:37.200182+00:00 mail_server postfix/smtpd[1893]: disconnect from apache_server.tfm_red_privada[172.20.0.11] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+2025-08-07T16:16:38.156167+00:00 mail_server postfix/smtpd-amavis/smtpd[1905]: connect from localhost[127.0.0.1]
+2025-08-07T16:16:38.161686+00:00 mail_server postfix/smtpd-amavis/smtpd[1905]: 2764D18A734: client=localhost[127.0.0.1]
+2025-08-07T16:16:38.164864+00:00 mail_server postfix/cleanup[1896]: 2764D18A734: message-id=<20250807161638.2764D18A734@mail_server.masterciberseguridad.com>
+2025-08-07T16:16:38.167726+00:00 mail_server postfix/qmgr[745]: 2764D18A734: from=<no-reply@masterciberseguridad.com>, size=720, nrcpt=1 (queue active)
+2025-08-07T16:16:38.167807+00:00 mail_server postfix/smtpd-amavis/smtpd[1905]: disconnect from localhost[127.0.0.1] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+2025-08-07T16:16:38.180985+00:00 mail_server amavis[795]: (00795-03) Passed CLEAN {RelayedOpenRelay}, [172.20.0.11]:39092 <no-reply@masterciberseguridad.com> -> <diegoj_garcia@hotmail.com>, Queue-ID: 2455818A733, mail_id: nxr3KalsO6dA, Hits: -0.86, size: 406, queued_as: 2764D18A734, 953 ms
+2025-08-07T16:16:38.185716+00:00 mail_server postfix/smtp-amavis/smtp[1897]: 2455818A733: to=<diegoj_garcia@hotmail.com>, relay=127.0.0.1[127.0.0.1]:10024, delay=1, delays=0.06/0.02/0.02/0.94, dsn=2.0.0, status=sent (250 2.0.0 from MTA(smtp:[127.0.0.1]:10025): 250 2.0.0 Ok: queued as 2764D18A734)
+2025-08-07T16:16:38.185989+00:00 mail_server postfix/qmgr[745]: 2455818A733: removed
+2025-08-07T16:16:38.729558+00:00 mail_server postfix/smtp[1906]: 2764D18A734: prepend: header Message-Id: <20250807161638.2764D18A734@mail_server.masterci: X-MS-Reactions: disallow
+2025-08-07T16:16:39.429814+00:00 mail_server postfix/smtp[1906]: 2764D18A734: to=<diegoj_garcia@hotmail.com>, relay=hotmail-com.olc.protection.outlook.com[52.101.73.7]:25, delay=1.3, delays=0.01/0.03/0.34/0.89, dsn=2.6.0, status=sent (250 2.6.0 <20250807161638.2764D18A734@mail_server.masterciberseguridad.com> [InternalId=81548544054262, Hostname=PR3P189MB1116.EURP189.PROD.OUTLOOK.COM] 8132 bytes in 0.076, 104.219 KB/sec Queued mail for delivery -> 250 2.1.5)
+2025-08-07T16:16:39.430745+00:00 mail_server postfix/qmgr[745]: 2764D18A734: removed
+2025-08-07T16:19:15.694730+00:00 mail_server postfix/postscreen[2144]: CONNECT from [172.20.0.11]:35546 to [172.20.0.13]:25
+2025-08-07T16:19:15.694842+00:00 mail_server postfix/postscreen[2144]: ALLOWLISTED [172.20.0.11]:35546
+2025-08-07T16:19:15.725010+00:00 mail_server postfix/smtpd[2145]: connect from apache_server.tfm_red_privada[172.20.0.11]
+2025-08-07T16:19:15.729711+00:00 mail_server opendmarc[640]: ignoring connection from apache_server.tfm_red_privada
+2025-08-07T16:19:15.760253+00:00 mail_server postfix/smtpd[2145]: B993118A733: client=apache_server.tfm_red_privada[172.20.0.11]
+2025-08-07T16:19:15.803100+00:00 mail_server postfix/cleanup[2148]: B993118A733: message-id=<>
+2025-08-07T16:19:15.806323+00:00 mail_server opendkim[631]: B993118A733: no signing table match for 'no-reply@masterciberseguridad.com'
+2025-08-07T16:19:15.809647+00:00 mail_server opendkim[631]: B993118A733: no signature data
+2025-08-07T16:19:15.811856+00:00 mail_server postfix/qmgr[745]: B993118A733: from=<no-reply@masterciberseguridad.com>, size=428, nrcpt=1 (queue active)
+2025-08-07T16:19:15.813984+00:00 mail_server postfix/smtpd[2145]: disconnect from apache_server.tfm_red_privada[172.20.0.11] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+2025-08-07T16:19:16.586189+00:00 mail_server postfix/smtpd-amavis/smtpd[2154]: connect from localhost[127.0.0.1]
+2025-08-07T16:19:16.591774+00:00 mail_server postfix/smtpd-amavis/smtpd[2154]: 906DB18A734: client=localhost[127.0.0.1]
+2025-08-07T16:19:16.594373+00:00 mail_server postfix/cleanup[2148]: 906DB18A734: message-id=<20250807161916.906DB18A734@mail_server.masterciberseguridad.com>
+2025-08-07T16:19:16.598929+00:00 mail_server postfix/smtpd-amavis/smtpd[2154]: disconnect from localhost[127.0.0.1] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+2025-08-07T16:19:16.599339+00:00 mail_server postfix/qmgr[745]: 906DB18A734: from=<no-reply@masterciberseguridad.com>, size=702, nrcpt=1 (queue active)
+2025-08-07T16:19:16.610155+00:00 mail_server amavis[796]: (00796-03) Passed CLEAN {RelayedOpenRelay}, [172.20.0.11]:35546 <no-reply@masterciberseguridad.com> -> <zaszeszis@gmail.com>, Queue-ID: B993118A733, mail_id: T__O3I_4G9Hd, Hits: -0.86, size: 394, queued_as: 906DB18A734, 772 ms
+2025-08-07T16:19:16.615754+00:00 mail_server postfix/smtp-amavis/smtp[2149]: B993118A733: to=<zaszeszis@gmail.com>, relay=127.0.0.1[127.0.0.1]:10024, delay=0.87, delays=0.07/0.02/0.02/0.77, dsn=2.0.0, status=sent (250 2.0.0 from MTA(smtp:[127.0.0.1]:10025): 250 2.0.0 Ok: queued as 906DB18A734)
+2025-08-07T16:19:16.616879+00:00 mail_server postfix/qmgr[745]: B993118A733: removed
+2025-08-07T16:19:17.239638+00:00 mail_server postfix/smtp[2155]: connect to gmail-smtp-in.l.google.com[2a00:1450:400c:c04::1a]:25: Network is unreachable
+2025-08-07T16:19:17.947832+00:00 mail_server postfix/smtp[2155]: 906DB18A734: prepend: header Message-Id: <20250807161916.906DB18A734@mail_server.masterci: X-MS-Reactions: disallow
+2025-08-07T16:19:18.190870+00:00 mail_server postfix/smtp[2155]: 906DB18A734: to=<zaszeszis@gmail.com>, relay=gmail-smtp-in.l.google.com[74.125.206.26]:25, delay=1.6, delays=0.01/0.02/1.1/0.48, dsn=5.7.1, status=bounced (host gmail-smtp-in.l.google.com[74.125.206.26] said: 550-5.7.1 [83.165.107.254] The IP you're using to send mail is not authorized to 550-5.7.1 send email directly to our servers. Please use the SMTP relay at your 550-5.7.1 service provider instead. For more information, go to 550 5.7.1  https://support.google.com/mail/?p=NotAuthorizedError ffacd0b85a97d-3b79c5a36eesi10046937f8f.367 - gsmtp (in reply to end of DATA command))
+2025-08-07T16:19:18.194413+00:00 mail_server postfix/cleanup[2148]: 2F0DF18A735: message-id=<20250807161918.2F0DF18A735@mail_server.masterciberseguridad.com>
+2025-08-07T16:19:18.196331+00:00 mail_server postfix/bounce[2159]: 906DB18A734: sender non-delivery notification: 2F0DF18A735
+2025-08-07T16:19:18.196888+00:00 mail_server postfix/qmgr[745]: 2F0DF18A735: from=<>, size=3578, nrcpt=1 (queue active)
+2025-08-07T16:19:18.198568+00:00 mail_server postfix/qmgr[745]: 906DB18A734: removed
+2025-08-07T16:19:18.239868+00:00 mail_server dovecot: lmtp(2161): Connect from local
+2025-08-07T16:19:18.274578+00:00 mail_server dovecot: lmtp(no-reply@masterciberseguridad.com)<2161><wyRHDgbSlGhxCAAACsJeBQ>: sieve: msgid=<20250807161918.2F0DF18A735@mail_server.masterciberseguridad.com>: stored mail into mailbox 'INBOX'
+2025-08-07T16:19:18.276204+00:00 mail_server dovecot: lmtp(2161): Disconnect from local: Logged out (state=READY)
+2025-08-07T16:19:18.276416+00:00 mail_server postfix/lmtp[2160]: 2F0DF18A735: to=<no-reply@masterciberseguridad.com>, relay=mail_server.masterciberseguridad.com[/var/run/dovecot/lmtp], delay=0.08, delays=0/0.02/0.02/0.04, dsn=2.0.0, status=sent (250 2.0.0 <no-reply@masterciberseguridad.com> wyRHDgbSlGhxCAAACsJeBQ Saved)
+2025-08-07T16:19:18.276630+00:00 mail_server postfix/qmgr[745]: 2F0DF18A735: removed
+2025-08-07T16:27:35.776288+00:00 mail_server postfix/postfix-script[2990]: refreshing the Postfix mail system
+2025-08-07T16:27:35.794747+00:00 mail_server postfix/master[742]: reload -- version 3.7.11, configuration /etc/postfix
+2025-08-07T16:27:35.838995+00:00 mail_server dovecot: master: Warning: SIGHUP received - reloading configuration
+2025-08-07T16:27:36.158522+00:00 mail_server amavis[690]: (!)Net::Server: 2025/08/07-16:27:36 Re-exec server during HUP
+2025-08-07T16:27:36.920380+00:00 mail_server amavis[690]: starting. (warm) /usr/sbin/amavisd at mail_server.masterciberseguridad.com amavis-2.13.0 (20230106), Unicode aware, LC_CTYPE="C.UTF-8"
+2025-08-07T16:27:36.920464+00:00 mail_server amavis[690]: perl=5.036000, user=999, EUID: 999 (999);  group=(), EGID: 999 999 (999 999)
+2025-08-07T16:27:37.477248+00:00 mail_server amavis[690]: Net::Server: Group Not Defined.  Defaulting to EGID '999 999'
+2025-08-07T16:27:37.477368+00:00 mail_server amavis[690]: Net::Server: User Not Defined.  Defaulting to EUID '999'
+2025-08-07T16:27:37.490355+00:00 mail_server amavis[690]: No ext program for   .zoo, tried: zoo
+2025-08-07T16:27:37.490532+00:00 mail_server amavis[690]: No ext program for   .doc, tried: ripole
+2025-08-07T16:27:37.491776+00:00 mail_server amavis[690]: No ext program for   .zst, tried: unzstd
+2025-08-07T16:27:37.491884+00:00 mail_server amavis[690]: No decoder for       .F   
+2025-08-07T16:27:37.491931+00:00 mail_server amavis[690]: No decoder for       .doc 
+2025-08-07T16:27:37.491983+00:00 mail_server amavis[690]: No decoder for       .zoo 
+2025-08-07T16:27:37.492025+00:00 mail_server amavis[690]: No decoder for       .zst 
+2025-08-07T16:28:13.292863+00:00 mail_server dovecot: master: Dovecot v2.3.19.1 (9b53102964) starting up for imap, lmtp
+2025-08-07T16:28:13.980785+00:00 mail_server opendkim[186]: OpenDKIM Filter v2.11.0 starting (args: -f)
+2025-08-07T16:28:14.286084+00:00 mail_server opendmarc[195]: OpenDMARC Filter v1.4.2 starting (args: -f -p inet:8893@localhost -P /var/run/opendmarc/opendmarc.pid)
+2025-08-07T16:28:14.286178+00:00 mail_server opendmarc[195]: additional trusted authentication services: mail_server.masterciberseguridad.com
+2025-08-07T16:28:15.672196+00:00 mail_server postfix/postfix-script[325]: starting the Postfix mail system
+2025-08-07T16:28:15.688653+00:00 mail_server postfix/master[326]: daemon started -- version 3.7.11, configuration /etc/postfix
+2025-08-07T16:28:16.437010+00:00 mail_server amavis[245]: starting. /usr/sbin/amavisd at mail_server.masterciberseguridad.com amavis-2.13.0 (20230106), Unicode aware, LC_CTYPE="C.UTF-8"
+2025-08-07T16:28:16.437098+00:00 mail_server amavis[245]: perl=5.036000, user=, EUID: 999 (999);  group=(), EGID: 999 999 (999 999)
+2025-08-07T16:28:16.753066+00:00 mail_server amavis[245]: Net::Server: Group Not Defined.  Defaulting to EGID '999 999'
+2025-08-07T16:28:16.753148+00:00 mail_server amavis[245]: Net::Server: User Not Defined.  Defaulting to EUID '999'
+2025-08-07T16:28:16.765395+00:00 mail_server amavis[245]: No ext program for   .zoo, tried: zoo
+2025-08-07T16:28:16.765492+00:00 mail_server amavis[245]: No ext program for   .doc, tried: ripole
+2025-08-07T16:28:16.767025+00:00 mail_server amavis[245]: No ext program for   .zst, tried: unzstd
+2025-08-07T16:28:16.767081+00:00 mail_server amavis[245]: No decoder for       .F   
+2025-08-07T16:28:16.767095+00:00 mail_server amavis[245]: No decoder for       .doc 
+2025-08-07T16:28:16.767108+00:00 mail_server amavis[245]: No decoder for       .zoo 
+2025-08-07T16:28:16.767119+00:00 mail_server amavis[245]: No decoder for       .zst 
+2025-08-07T16:31:33.814202+00:00 mail_server postfix/postscreen[646]: CONNECT from [172.20.0.5]:57888 to [172.20.0.13]:25
+2025-08-07T16:31:33.814235+00:00 mail_server postfix/postscreen[646]: ALLOWLISTED [172.20.0.5]:57888
+2025-08-07T16:31:33.814365+00:00 mail_server postfix/postscreen[646]: CONNECT from [172.20.0.5]:57890 to [172.20.0.13]:25
+2025-08-07T16:31:33.814376+00:00 mail_server postfix/postscreen[646]: ALLOWLISTED [172.20.0.5]:57890
+2025-08-07T16:31:33.848668+00:00 mail_server dovecot: imap-login: Disconnected: Aborted login by logging out (no auth attempts in 0 secs): user=<>, rip=172.20.0.5, lip=172.20.0.13, session=<PDKQ/cg7iLKsFAAF>
+2025-08-07T16:31:33.851974+00:00 mail_server postfix/submissions/smtpd[644]: connect from user.tfm_red_privada[172.20.0.5]
+2025-08-07T16:31:33.853988+00:00 mail_server postfix/submissions/smtpd[644]: improper command pipelining after CONNECT from user.tfm_red_privada[172.20.0.5]: \026\003\001\002\000\001\000\001\374\003\003j\276\3379\023\v\263\2120\335W\215\376\342J\001\205\350\216E\372q>\r\342\274A\327\035+|\343 \304\202a\232\255\270k\365%\002Y\346\344\306\020\021\226~\fQK\274\372\a\351\245\346\275\332\005\201d\000"\023\001\023\003\023\002\300+\300/\314\251\314\250\300,\3000\300\n\300\t
+2025-08-07T16:31:33.855120+00:00 mail_server dovecot: imap-login: Disconnected: Aborted login by logging out (no auth attempts in 0 secs): user=<>, rip=172.20.0.5, lip=172.20.0.13, session=<jE2Q/cg7lrKsFAAF>
+2025-08-07T16:31:33.857805+00:00 mail_server postfix/submission/smtpd[645]: connect from user.tfm_red_privada[172.20.0.5]
+2025-08-07T16:31:33.863131+00:00 mail_server postfix/smtpd[650]: connect from user.tfm_red_privada[172.20.0.5]
+2025-08-07T16:31:33.868215+00:00 mail_server opendmarc[195]: ignoring connection from user.tfm_red_privada
+2025-08-07T16:31:33.869147+00:00 mail_server opendmarc[195]: ignoring connection from user.tfm_red_privada
+2025-08-07T16:31:33.870001+00:00 mail_server postfix/submission/smtpd[645]: disconnect from user.tfm_red_privada[172.20.0.5] ehlo=1 quit=1 commands=2
+2025-08-07T16:31:33.870668+00:00 mail_server opendmarc[195]: ignoring connection from user.tfm_red_privada
+2025-08-07T16:31:33.871457+00:00 mail_server postfix/smtpd[650]: disconnect from user.tfm_red_privada[172.20.0.5] ehlo=1 quit=1 commands=2
+2025-08-07T16:31:33.873740+00:00 mail_server postfix/smtpd[650]: connect from user.tfm_red_privada[172.20.0.5]
+2025-08-07T16:31:33.874476+00:00 mail_server postfix/submission/smtpd[645]: connect from user.tfm_red_privada[172.20.0.5]
+2025-08-07T16:31:33.875393+00:00 mail_server opendmarc[195]: ignoring connection from user.tfm_red_privada
+2025-08-07T16:31:33.876848+00:00 mail_server postfix/smtpd[650]: disconnect from user.tfm_red_privada[172.20.0.5] ehlo=1 quit=1 commands=2
+2025-08-07T16:31:33.877842+00:00 mail_server postfix/submissions/smtpd[644]: warning: non-SMTP command from user.tfm_red_privada[172.20.0.5]: \026\003\001\002\000\001\000\001\374\003\003j\276\3379\023\v\263\2120\335W\215\376\342J\001\205\350\
+2025-08-07T16:31:33.881618+00:00 mail_server postfix/submissions/smtpd[644]: disconnect from user.tfm_red_privada[172.20.0.5] unknown=0/1 commands=0/1
+2025-08-07T16:31:33.887066+00:00 mail_server opendmarc[195]: ignoring connection from user.tfm_red_privada
+2025-08-07T16:31:33.888648+00:00 mail_server postfix/submission/smtpd[645]: improper command pipelining after EHLO from user.tfm_red_privada[172.20.0.5]: QUIT\r\n
+2025-08-07T16:31:33.891091+00:00 mail_server postfix/submission/smtpd[645]: disconnect from user.tfm_red_privada[172.20.0.5] ehlo=1 quit=1 commands=2
+2025-08-07T16:33:35.083980+00:00 mail_server dovecot: imap-login: Disconnected: Aborted login by logging out (no auth attempts in 0 secs): user=<>, rip=172.20.0.5, lip=172.20.0.13, session=<HhfKBMk7ZI+sFAAF>
+2025-08-07T16:33:35.120076+00:00 mail_server postfix/submission/smtpd[834]: connect from user.tfm_red_privada[172.20.0.5]
+2025-08-07T16:33:35.139503+00:00 mail_server opendmarc[195]: ignoring connection from user.tfm_red_privada
+2025-08-07T16:33:35.152083+00:00 mail_server postfix/submission/smtpd[834]: disconnect from user.tfm_red_privada[172.20.0.5] ehlo=1 quit=1 commands=2
+2025-08-07T16:33:49.456840+00:00 mail_server dovecot: auth: passwd-file(user,172.20.0.5,<xGilBck7MrasFAAF>): unknown user (SHA1 of given password: 0c6f68)
+2025-08-07T16:33:55.467785+00:00 mail_server dovecot: auth: passwd-file(user,172.20.0.5,<xGilBck7MrasFAAF>): unknown user (SHA1 of given password: 0c6f68)
+2025-08-07T16:34:01.474188+00:00 mail_server dovecot: auth: passwd-file(user,172.20.0.5,<xGilBck7MrasFAAF>): unknown user (SHA1 of given password: 0c6f68)
+2025-08-07T16:34:03.481380+00:00 mail_server dovecot: imap-login: Disconnected: Connection closed (auth failed, 3 attempts in 14 secs): user=<user>, method=PLAIN, rip=172.20.0.5, lip=172.20.0.13, session=<xGilBck7MrasFAAF>
+2025-08-07T16:34:07.527891+00:00 mail_server dovecot: imap-login: Login: user=<user@masterciberseguridad.com>, method=PLAIN, rip=172.20.0.5, lip=172.20.0.13, mpid=886, session=<T6x7Bsk78sOsFAAF>
+2025-08-07T16:34:07.727636+00:00 mail_server dovecot: imap(user@masterciberseguridad.com)<886><T6x7Bsk78sOsFAAF>: Disconnected: Logged out in=9 out=488 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2025-08-07T16:34:08.061700+00:00 mail_server dovecot: imap-login: Login: user=<user@masterciberseguridad.com>, method=PLAIN, rip=172.20.0.5, lip=172.20.0.13, mpid=889, session=<EXrABsk7+MOsFAAF>
+2025-08-07T16:34:08.087292+00:00 mail_server dovecot: imap-login: Login: user=<user@masterciberseguridad.com>, method=PLAIN, rip=172.20.0.5, lip=172.20.0.13, mpid=890, session=<syHBBsk7BsSsFAAF>
+2025-08-07T16:35:09.996521+00:00 mail_server postfix/postscreen[984]: CONNECT from [172.20.0.11]:37120 to [172.20.0.13]:25
+2025-08-07T16:35:09.996545+00:00 mail_server postfix/postscreen[984]: ALLOWLISTED [172.20.0.11]:37120
+2025-08-07T16:35:10.027461+00:00 mail_server postfix/smtpd[985]: connect from apache_server.tfm_red_privada[172.20.0.11]
+2025-08-07T16:35:10.031201+00:00 mail_server opendmarc[195]: ignoring connection from apache_server.tfm_red_privada
+2025-08-07T16:35:10.076310+00:00 mail_server postfix/smtpd[985]: 123B218A782: client=apache_server.tfm_red_privada[172.20.0.11]
+2025-08-07T16:35:10.120076+00:00 mail_server postfix/cleanup[987]: 123B218A782: message-id=<>
+2025-08-07T16:35:10.129270+00:00 mail_server opendkim[186]: 123B218A782: no signing table match for 'no-reply@masterciberseguridad.com'
+2025-08-07T16:35:10.135843+00:00 mail_server opendkim[186]: 123B218A782: no signature data
+2025-08-07T16:35:10.140858+00:00 mail_server postfix/smtpd[985]: disconnect from apache_server.tfm_red_privada[172.20.0.11] ehlo=1 mail=1 rcpt=1 data=1 quit=1 commands=5
+2025-08-07T16:35:10.150733+00:00 mail_server postfix/qmgr[328]: 123B218A782: from=<no-reply@masterciberseguridad.com>, size=448, nrcpt=1 (queue active)
+2025-08-07T16:35:14.692248+00:00 mail_server postfix/smtpd-amavis/smtpd[999]: connect from localhost[127.0.0.1]
+2025-08-07T16:35:14.707421+00:00 mail_server postfix/smtpd-amavis/smtpd[999]: ACABF18A789: client=localhost[127.0.0.1]
+2025-08-07T16:35:14.730420+00:00 mail_server postfix/cleanup[987]: ACABF18A789: message-id=<20250807163514.ACABF18A789@mail_server.masterciberseguridad.com>
+2025-08-07T16:35:14.732718+00:00 mail_server postfix/qmgr[328]: ACABF18A789: from=<no-reply@masterciberseguridad.com>, size=732, nrcpt=1 (queue active)
+2025-08-07T16:35:14.800240+00:00 mail_server dovecot: lmtp(1001): Connect from local
+2025-08-07T16:35:14.827133+00:00 mail_server dovecot: lmtp(user@masterciberseguridad.com)<1001><W5asL8LVlGjpAwAACsJeBQ>: sieve: msgid=<20250807163514.ACABF18A789@mail_server.masterciberseguridad.com>: stored mail into mailbox 'INBOX'
+2025-08-07T16:35:14.828936+00:00 mail_server dovecot: lmtp(1001): Disconnect from local: Logged out (state=READY)
+2025-08-07T16:35:14.829015+00:00 mail_server postfix/lmtp[1000]: ACABF18A789: to=<user@masterciberseguridad.com>, relay=mail_server.masterciberseguridad.com[/var/run/dovecot/lmtp], delay=0.12, delays=0.03/0.02/0.05/0.03, dsn=2.0.0, status=sent (250 2.0.0 <user@masterciberseguridad.com> W5asL8LVlGjpAwAACsJeBQ Saved)
+2025-08-07T16:35:14.830319+00:00 mail_server postfix/qmgr[328]: ACABF18A789: removed
+2025-08-07T16:35:14.834888+00:00 mail_server amavis[350]: (00350-01) Passed CLEAN {RelayedInbound}, [172.20.0.11]:37120 <no-reply@masterciberseguridad.com> -> <user@masterciberseguridad.com>, Queue-ID: 123B218A782, mail_id: y_jmDuzgTyZA, Hits: -0.86, size: 414, queued_as: ACABF18A789, 4500 ms
+2025-08-07T16:35:14.849020+00:00 mail_server postfix/smtp-amavis/smtp[988]: 123B218A782: to=<user@masterciberseguridad.com>, relay=127.0.0.1[127.0.0.1]:10024, delay=4.8, delays=0.09/0.05/0.53/4.1, dsn=2.0.0, status=sent (250 2.0.0 from MTA(smtp:[127.0.0.1]:10025): 250 2.0.0 Ok: queued as ACABF18A789)
+2025-08-07T16:35:14.849674+00:00 mail_server postfix/qmgr[328]: 123B218A782: removed
+2025-08-07T16:38:00.155864+00:00 mail_server dovecot: imap(user@masterciberseguridad.com)<889><EXrABsk7+MOsFAAF>: Disconnected: Logged out in=140 out=916 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2025-08-07T16:38:00.158976+00:00 mail_server dovecot: imap(user@masterciberseguridad.com)<890><syHBBsk7BsSsFAAF>: Disconnected: Logged out in=849 out=4057 deleted=0 expunged=0 trashed=0 hdr_count=2 hdr_bytes=260 body_count=2 body_bytes=1059

@@ -1,0 +1,87 @@
+Return-Path: <>
+Delivered-To: no-reply@masterciberseguridad.com
+Received: from mail_server.masterciberseguridad.com
+	by mail_server.masterciberseguridad.com with LMTP
+	id 4LffGSrPlGjqAwAACsJeBQ
+	(envelope-from <>)
+	for <no-reply@masterciberseguridad.com>; Thu, 07 Aug 2025 16:07:06 +0000
+Received: by mail_server.masterciberseguridad.com (Postfix)
+	id 6856218A733; Thu,  7 Aug 2025 16:07:06 +0000 (UTC)
+Date: Thu,  7 Aug 2025 16:07:06 +0000 (UTC)
+From: Mail Delivery System <MAILER-DAEMON@mail_server.masterciberseguridad.com>
+Subject: Undelivered Mail Returned to Sender
+To: no-reply@masterciberseguridad.com
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="7519518A732.1754582826/mail_server.masterciberseguridad.com"
+Content-Transfer-Encoding: 7bit
+Message-Id: <20250807160706.6856218A733@mail_server.masterciberseguridad.com>
+
+This is a MIME-encapsulated message.
+
+--7519518A732.1754582826/mail_server.masterciberseguridad.com
+Content-Description: Notification
+Content-Type: text/plain; charset=us-ascii
+
+This is the mail system at host mail_server.masterciberseguridad.com.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<diegoj_garcia@hotmail.com>: host
+    hotmail-com.olc.protection.outlook.com[52.101.41.29] said: 550 5.7.1
+    Service unavailable, Client host [83.165.107.254] blocked using Spamhaus.
+    To request removal from this list see
+    https://www.spamhaus.org/query/ip/83.165.107.254 (AS3130). [Name=Protocol
+    Filter Agent][AGT=PFA][MxId=11BBA03C7CEE0EBB]
+    [SJ1PEPF00002326.namprd03.prod.outlook.com 2025-08-07T16:07:06.362Z
+    08DDD01E4585CC78] (in reply to MAIL FROM command)
+
+--7519518A732.1754582826/mail_server.masterciberseguridad.com
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; mail_server.masterciberseguridad.com
+X-Postfix-Queue-ID: 7519518A732
+X-Postfix-Sender: rfc822; no-reply@masterciberseguridad.com
+Arrival-Date: Thu,  7 Aug 2025 16:07:05 +0000 (UTC)
+
+Final-Recipient: rfc822; diegoj_garcia@hotmail.com
+Original-Recipient: rfc822;diegoj_garcia@hotmail.com
+Action: failed
+Status: 5.7.1
+Remote-MTA: dns; hotmail-com.olc.protection.outlook.com
+Diagnostic-Code: smtp; 550 5.7.1 Service unavailable, Client host
+    [83.165.107.254] blocked using Spamhaus. To request removal from this list
+    see https://www.spamhaus.org/query/ip/83.165.107.254 (AS3130).
+    [Name=Protocol Filter Agent][AGT=PFA][MxId=11BBA03C7CEE0EBB]
+    [SJ1PEPF00002326.namprd03.prod.outlook.com 2025-08-07T16:07:06.362Z
+    08DDD01E4585CC78]
+
+--7519518A732.1754582826/mail_server.masterciberseguridad.com
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+
+Return-Path: <no-reply@masterciberseguridad.com>
+Received: from localhost (localhost [127.0.0.1])
+	by mail_server.masterciberseguridad.com (Postfix) with ESMTP id 7519518A732
+	for <diegoj_garcia@hotmail.com>; Thu,  7 Aug 2025 16:07:05 +0000 (UTC)
+Received: from localhost (apache_server.tfm_red_privada [172.20.0.11])
+	by mail_server.masterciberseguridad.com (Postfix) with ESMTP id AE19B18A725
+	for <diegoj_garcia@hotmail.com>; Thu,  7 Aug 2025 16:07:04 +0000 (UTC)
+From: no-reply@masterciberseguridad.com
+Date: Thu, 07 Aug 2025 18:07:04 +0200
+Subject: Prueba correo
+Message-Id: <20250807160705.7519518A732@mail_server.masterciberseguridad.com>
+
+Esto es un correo de prueba.
+
+--7519518A732.1754582826/mail_server.masterciberseguridad.com--

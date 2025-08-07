@@ -1,0 +1,10 @@
+Received: from localhost (apache_server.tfm_red_privada [172.20.0.11])
+	by mail_server.masterciberseguridad.com (Postfix) with ESMTP id 123B218A782
+	for <user@masterciberseguridad.com>; Thu,  7 Aug 2025 16:35:10 +0000 (UTC)
+Date: Thu, 07 Aug 2025 18:35:09 +0200
+To: user@masterciberseguridad.com
+Subject: prueba
+From: no-reply@masterciberseguridad.com
+Reply-To: no-reply@masterciberseguridad.com
+
+prueba
