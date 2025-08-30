@@ -109,20 +109,10 @@ docker volume prune -f
 
 ## FAQ / Problemas comunes
 
-**1) Mi navegador del host no resuelve `www.inseguracorp.com`.**  
-Ese dominio es **interno** al laboratorio. Opciones:
-- Entra desde los escritorios **noVNC** (Attacker/User) donde el DNS ya lo resuelve.
-- O añade en tu **/etc/hosts** (o `C:\Windows\System32\drivers\etc\hosts` en Windows):  
-  ```
-  127.0.0.1  www.inseguracorp.com
-  127.0.0.1  mail.masterciberseguridad.com
-  ```
-  y usa `http://www.inseguracorp.com` desde el host.
-
-**2) El puerto 53/80/443/3000/6080/6081/2227 ya está en uso.**  
+**1) El puerto 53/80/443/3000/6080/6081/2227 ya está en uso.**  
 Edita los *ports* en `docker-compose.yml` o libera el puerto en tu sistema.
 
-**3) noVNC no carga.**  
+**2) noVNC no carga.**  
 Comprueba que el servicio está **up/healthy**:
 ```bash
 docker compose ps
@@ -130,7 +120,7 @@ docker compose logs -f attacker
 ```
 Si es necesario, reinicia: `docker compose restart attacker user`.
 
-**4) ¿Cómo vuelvo al estado inicial?**  
+**3) ¿Cómo vuelvo al estado inicial?**  
 `docker compose down -v && docker volume prune -f` (elimina datos/flags generados).
 
 ---
