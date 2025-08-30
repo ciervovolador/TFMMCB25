@@ -1,0 +1,21 @@
+Return-Path: <no-reply@masterciberseguridad.com>
+Delivered-To: user@masterciberseguridad.com
+Received: from mail_server.masterciberseguridad.com
+	by mail_server.masterciberseguridad.com with LMTP
+	id Dy56NNkblmgEggAACsJeBQ
+	(envelope-from <no-reply@masterciberseguridad.com>)
+	for <user@masterciberseguridad.com>; Fri, 08 Aug 2025 15:46:33 +0000
+Received: from localhost (localhost [127.0.0.1])
+	by mail_server.masterciberseguridad.com (Postfix) with ESMTP id C6DE318A879
+	for <user@masterciberseguridad.com>; Fri,  8 Aug 2025 15:46:33 +0000 (UTC)
+Received: from localhost (apache_server.tfm_red_privada [172.20.0.11])
+	by mail_server.masterciberseguridad.com (Postfix) with ESMTP id 382F918A873
+	for <user@masterciberseguridad.com>; Fri,  8 Aug 2025 15:46:28 +0000 (UTC)
+Date: Fri, 08 Aug 2025 17:46:28 +0200
+To: user@masterciberseguridad.com
+Subject: Pruea
+From: no-reply@masterciberseguridad.com
+Reply-To: no-reply@masterciberseguridad.com
+Message-Id: <20250808154633.C6DE318A879@mail_server.masterciberseguridad.com>
+
+prueba

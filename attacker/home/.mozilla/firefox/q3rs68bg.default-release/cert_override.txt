@@ -1,3 +1,3 @@
 # PSM Certificate Override Settings file
 # This is a generated file!  Do not edit.
-www.inseguracorp.com:443:	OID.2.16.840.1.101.3.4.2.1	A5:13:9D:92:C8:F0:E0:A7:2E:33:49:59:E6:EF:A5:2B:D7:C2:75:1B:EA:B3:95:5E:8E:86:80:62:62:7C:E8:95	
+www.inseguracorp.com:443:	OID.2.16.840.1.101.3.4.2.1	95:CB:65:A8:96:36:9C:06:8B:E9:04:E3:08:E6:72:C4:3C:5B:7E:B7:6C:E4:14:C7:FC:2E:CF:5B:AA:8F:E8:7A	

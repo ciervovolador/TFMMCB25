@@ -144,6 +144,8 @@ services:
     networks:
       red_publica:
         ipv4_address: 203.0.113.30
+      red_ataque:
+        ipv4_address: 10.20.30.5
     dns:
       - 203.0.113.20
     depends_on:

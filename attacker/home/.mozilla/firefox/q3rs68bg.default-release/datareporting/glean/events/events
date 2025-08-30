@@ -1,11 +1,16 @@
-{"timestamp":61861845,"category":"session_restore","name":"backup_can_be_loaded_session_file","extra":{"path_key":"clean","glean_timestamp":"1754582961017","can_load":"false","loadfail_reason":"File doesn't exist."}}
-{"timestamp":61861850,"category":"session_restore","name":"backup_can_be_loaded_session_file","extra":{"path_key":"recovery","loadfail_reason":"N/A","can_load":"true","glean_timestamp":"1754582961023"}}
-{"timestamp":61861850,"category":"session_restore","name":"backup_can_be_loaded_session_file","extra":{"glean_timestamp":"1754582961023","can_load":"true","loadfail_reason":"N/A","path_key":"recovery"}}
-{"timestamp":61861851,"category":"session_restore","name":"shutdown_success_session_startup","extra":{"shutdown_ok":"true","shutdown_reason":"final-state-write-incomplete","glean_timestamp":"1754582961023"}}
-{"timestamp":61862918,"category":"webcompatreporting","name":"reason_dropdown","extra":{"setting":"required","glean_timestamp":"1754582962090"}}
-{"timestamp":61863971,"category":"jsonfile","name":"load_autofillprofiles","extra":{"glean_timestamp":"1754582963143","value":""}}
-{"timestamp":61865622,"category":"doh","name":"state_rollback","extra":{"glean_timestamp":"1754582964794","value":"null"}}
-{"timestamp":61866566,"category":"jsonfile","name":"load_logins","extra":{"value":"","glean_timestamp":"1754582965738"}}
-{"timestamp":61867616,"category":"urlbar","name":"abandonment","extra":{"actions":"none,none,none,none,none","interaction":"topsites","n_results":"5","groups":"top_site,top_site,top_site,top_site,top_site","abandonment_type":"blur","glean_timestamp":"1754582966788","search_mode":"","sap":"urlbar","n_words":"0","n_chars":"0","search_engine_default_id":"google-canonical","results":"top_site,top_site,top_site,top_site,top_site"}}
-{"timestamp":61867850,"category":"nimbus_events","name":"is_ready","extra":{"glean_timestamp":"1754582967023"}}
-{"timestamp":61868002,"category":"upgrade_dialog","name":"trigger_reason","extra":{"value":"not-major","glean_timestamp":"1754582967175"}}
+{"timestamp":973963,"category":"session_restore","name":"backup_can_be_loaded_session_file","extra":{"path_key":"clean","glean_timestamp":"1755515213217","loadfail_reason":"N/A","can_load":"true"}}
+{"timestamp":973964,"category":"session_restore","name":"backup_can_be_loaded_session_file","extra":{"can_load":"true","path_key":"clean","loadfail_reason":"N/A","glean_timestamp":"1755515213218"}}
+{"timestamp":973965,"category":"session_restore","name":"shutdown_success_session_startup","extra":{"shutdown_ok":"false","glean_timestamp":"1755515213219","shutdown_reason":"N/A"}}
+{"timestamp":974953,"category":"webcompatreporting","name":"reason_dropdown","extra":{"setting":"required","glean_timestamp":"1755515214207"}}
+{"timestamp":975590,"category":"jsonfile","name":"load_autofillprofiles","extra":{"glean_timestamp":"1755515214844","value":""}}
+{"timestamp":976178,"category":"doh","name":"state_rollback","extra":{"value":"null","glean_timestamp":"1755515215432"}}
+{"timestamp":977550,"category":"nimbus_events","name":"is_ready","extra":{"glean_timestamp":"1755515216804"}}
+{"timestamp":977661,"category":"jsonfile","name":"load_logins","extra":{"glean_timestamp":"1755515216915","value":""}}
+{"timestamp":977665,"category":"upgrade_dialog","name":"trigger_reason","extra":{"value":"not-major","glean_timestamp":"1755515216919"}}
+{"timestamp":978567,"category":"normandy","name":"expose_nimbus_experiment","extra":{"branchSlug":"treatment-a","glean_timestamp":"1755515217821","value":"login-status-advisory-callout-rollout","featureId":"fxms-message-10"}}
+{"timestamp":978567,"category":"nimbus_events","name":"exposure","extra":{"feature_id":"fxms-message-10","branch":"treatment-a","glean_timestamp":"1755515217821","experiment":"login-status-advisory-callout-rollout"}}
+{"timestamp":979546,"category":"security.ui.certerror","name":"click_advanced_button","extra":{"has_sts":"false","glean_timestamp":"1755515229599","value":"MOZILLA_PKIX_ERROR_SELF_SIGNED_CERT","is_frame":"false"}}
+{"timestamp":982841,"category":"security.ui.certerror","name":"click_exception_button","extra":{"is_frame":"false","glean_timestamp":"1755515229599","value":"MOZILLA_PKIX_ERROR_SELF_SIGNED_CERT","has_sts":"false"}}
+{"timestamp":14820087,"category":"nimbus_events","name":"is_ready","extra":{"glean_timestamp":"1756222827618"}}
+{"timestamp":36419499,"category":"nimbus_events","name":"is_ready","extra":{"glean_timestamp":"1756244427030"}}
+{"timestamp":58025720,"category":"nimbus_events","name":"is_ready","extra":{"glean_timestamp":"1756266033251"}}
