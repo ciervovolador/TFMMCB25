@@ -2,7 +2,7 @@
 
 > **Aviso legal**: Este laboratorio es **exclusivamente educativo**. No expongas servicios a Internet ni utilices los contenedores para actividades fuera del entorno de prácticas.
 
-![Arquitectura](docs/network.png)
+![Arquitectura](network.png)
 
 ## 🧩 ¿Qué es?
 Un laboratorio “**Capture The Flag**” (CTF) que simula una mini‑empresa con servicios reales (web, base de datos, correo, DNS y monitorización) desplegados con **Docker**. Incluye dos puestos de trabajo:
