@@ -4,7 +4,7 @@
 
 ![Arquitectura](network.png)
 
-## 🧩 ¿Qué es?
+## ¿Qué es?
 Un laboratorio “**Capture The Flag**” (CTF) que simula una mini‑empresa con servicios reales (web, base de datos, correo, DNS y monitorización) desplegados con **Docker**. Incluye dos puestos de trabajo:
 
 - **Attacker** (equipo del alumno atacante)
@@ -14,7 +14,7 @@ Todo corre en tu máquina y es reproducible con `docker compose`.
 
 ---
 
-## 📦 Requisitos
+## Requisitos
 - Docker Desktop o Docker Engine ≥ 24
 - Docker Compose V2 (`docker compose …`)
 - 6–8 GB de RAM libres recomendados
@@ -23,7 +23,7 @@ Todo corre en tu máquina y es reproducible con `docker compose`.
 
 ---
 
-## 🚀 Arranque rápido
+## Arranque rápido
 ```bash
 # 1) Clona el repositorio
 git clone https://github.com/ciervovolador/TFMMCB25
@@ -43,7 +43,7 @@ docker compose ps
 
 ---
 
-## 🌐 Arquitectura (resumen)
+## Arquitectura (resumen)
 - **Red Pública** `203.0.113.0/20` → *Attacker* + *Router*
 - **Red Privada** `172.20.0.0/24` → DNS, Apache, MySQL, Mail, Grafana, User
 - **Red de Ataque** `10.20.30.0/24` → Attacker (aislado para pivoting)
@@ -56,7 +56,7 @@ Dominios **internos** resueltos por el DNS del laboratorio:
 
 ---
 
-## 🔎 Servicios y accesos
+## Servicios y accesos
 | Rol / Servicio | Cómo acceder desde tu **host** | Notas |
 |---|---|---|
 | **Attacker – noVNC (escritorio web)** | `http://localhost:6081` | Navegador con herramientas (Nmap, Metasploit, etc.). |
@@ -72,7 +72,7 @@ Dominios **internos** resueltos por el DNS del laboratorio:
 
 ---
 
-## 🧠 Modo de uso (paso a paso)
+## Modo de uso (paso a paso)
 
 ### A) Empezar como **Attacker** (práctica ofensiva)
 1. Abre `http://localhost:6081` → **escritorio Attacker**.
@@ -87,7 +87,7 @@ Dominios **internos** resueltos por el DNS del laboratorio:
 
 ---
 
-## 🔧 Comandos útiles
+## Comandos útiles
 ```bash
 # Ver logs de un servicio
 docker compose logs -f apache
@@ -107,7 +107,7 @@ docker volume prune -f
 
 ---
 
-## 🧭 FAQ / Problemas comunes
+## FAQ / Problemas comunes
 
 **1) Mi navegador del host no resuelve `www.inseguracorp.com`.**  
 Ese dominio es **interno** al laboratorio. Opciones:
@@ -135,7 +135,7 @@ Si es necesario, reinicia: `docker compose restart attacker user`.
 
 ---
 
-## 🧱 Alcance y limitaciones
+## Alcance y limitaciones
 - **Modo monousuario**: un atacante y un usuario por despliegue.
 - No incluye aún **IDS/IPS** ni **SIEM** (previsto en el roadmap).
 - Escenarios base (web, correo, pivoting, DNS) pensados para prácticas de 2–4 horas.
@@ -147,19 +147,18 @@ Si es necesario, reinicia: `docker compose restart attacker user`.
 
 ---
 
-## 🗂 Estructura del repo (sugerida)
+## Estructura del repo (sugerida)
 ```
 TFMMCB25/
 ├─ docker-compose.yml
 ├─ .env.example
-├─ src/                    # configuraciones de servicios (apache, mail, dns, grafana, etc.)
-├─ docs/
-│  ├─ network.png          # diagrama de red (PNG)
+├─ src/                 # configuraciones de servicios (apache, mail, dns, grafana, etc.)
+├─ network.png          # diagrama de red (PNG)
 └─ README.md
 
 ---
 
-## 📝 Créditos y licencia
+## Créditos y licencia
 TFM – Laboratorio CTF con Docker  
 Autor: Diego José García Rodríguez — Máster en Ciberseguridad  
 Repositorio: `ciervovolador/TFMMCB25`  
